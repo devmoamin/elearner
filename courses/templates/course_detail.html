@@ -1,0 +1,88 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ course.title }}{% endblock title %}
+
+{% block content %}
+    <!-- Main Content -->
+    <div class="max-w-7xl mx-auto mt-14 bg-white rounded-xl shadow-xl overflow-hidden">
+        <!-- Course Banner -->
+        <div class="relative">
+            <img src="/uploads/{{ course.thumbnail }}" alt="Course Banner" class="w-full h-64 object-cover">
+            <div class="absolute bottom-0 left-0 bg-gradient-to-t from-black to-transparent text-white p-6">
+                <h2 class="text-3xl font-semibold">{{ course.title }}</h2>
+                <p class="text-gray-300">Category: {{ course.category.title }}</p>
+            </div>
+        </div>
+
+        <!-- Course Overview -->
+        <div class="p-10 space-y-8">
+            <h3 class="text-3xl font-semibold text-gray-800">Course Overview</h3>
+            <p class="text-lg leading-relaxed text-gray-700">
+                {{ course.description }}
+            </p>
+            <div class="flex items-center gap-6 mt-8">
+                <span class="inline-block bg-indigo-100 text-indigo-600 text-sm font-medium py-2 px-6 rounded-full">Duration: {{ course.duration_weeks }} weeks</span>
+                <span class="inline-block bg-green-100 text-green-600 text-sm font-medium py-2 px-6 rounded-full">Level: {{ course.get_difficulty_display }}</span>
+            </div>
+        </div>
+
+        <!-- Instructor Section -->
+        <div class="bg-gray-50 py-10">
+            <div class="max-w-7xl mx-auto px-4">
+                <h3 class="text-2xl font-semibold text-gray-800">Meet Your Instructor</h3>
+                <div class="flex items-center mt-6 space-x-6">
+                    <div class='w-1/4 px-10'>
+                        <img src="/uploads/{{ course.instructor.photo }}" alt="Instructor" class="w-48 h-48 object-cover object-top rounded-full">
+                    </div>
+                    <div class='w-3/4'>
+                        <h4 class="text-xl font-semibold text-gray-800">{{ course.instructor.name }}</h4>
+                        <p class="text-gray-600">
+                            {{ course.instructor.bio }}    
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Lessons Section -->
+        <div class="p-10 border-t border-gray-200">
+            <h3 class="text-2xl font-semibold text-gray-800 mb-8">Course Lessons</h3>
+            
+            <!-- Lessons Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {% for lesson in course.lessons.all %}
+                    <!-- Lesson 1 -->
+                    <div class="bg-indigo-50 p-8 rounded-lg shadow-xl hover:shadow-2xl transition-all duration-300 ease-in-out transform hover:scale-105 hover:bg-indigo-100">
+                        <h4 class="text-xl font-semibold text-indigo-800">{{ lesson.title }}</h4>
+                        <p class="text-gray-700 mt-4">
+                            {{ lesson.brief }}
+                        </p>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+
+        <!-- Enroll Section -->
+        <div class="bg-gradient-to-l to-indigo-300 from-indigo-600 text-white py-10 flex flex-col justify-center items-center">
+            <h3 class="text-3xl font-semibold">Ready to Get Started?</h3>
+            <p class="mt-4 text-lg">Enroll today and start building amazing web applications!</p>
+
+            {% if is_approved %}
+                <a href='{% url 'classroom' course=course.id lesson=course.lessons.first.id %}' class="mt-6 px-8 py-4 bg-white text-indigo-600 rounded-full font-semibold hover:bg-indigo-100 transition duration-300 text-lg">
+                    Go to Classroom
+                </a>
+            {% elif is_enrolled %}
+                <span class="block w-fit mt-6 px-8 py-4 bg-white text-indigo-600 rounded-full font-semibold transition duration-300 text-lg">
+                    Pending Approval...
+                </span>
+            {% else %}
+                <form action='{% url 'enroll' pk=course.id %}' method='POST'>
+                    {% csrf_token %}
+                    <button class="mt-6 px-8 py-4 bg-white text-indigo-600 rounded-full font-semibold hover:bg-indigo-100 transition duration-300 text-lg">
+                        Enroll Now
+                    </button>
+                </form>
+            {% endif %}
+        </div>
+    </div>
+{% endblock content %}

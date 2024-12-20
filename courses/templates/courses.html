@@ -1,0 +1,117 @@
+{% extends 'base.html' %}
+
+{% block title %}Courses{% endblock title %}
+
+{% block content %}
+    <!-- Main Content -->
+    <div class="max-w-7xl mx-auto mt-4 px-4">
+        <!-- Search Bar and Filters -->
+        <div class="mb-8 flex flex-col lg:flex-row justify-between items-center space-y-4 lg:space-y-0">
+            <!-- Course Listings Title -->
+            <h2 class="text-4xl font-semibold text-gray-800 mb-8">Our Courses</h2>
+
+            <!-- Filters Section -->
+            <div class="flex space-x-6 w-full lg:w-[40%]">
+                <!-- Category Filter -->
+                <div class="relative w-full">
+                    <select id='categoryFilter' onchange='handleFilter()' class="w-full px-6 py-2 rounded-lg border border-gray-300 shadow-lg focus:outline-none focus:ring-2 focus:ring-indigo-600 transition duration-300">
+                        <option value="">All Categories</option>
+                        {% for category in categories %}
+                            <option value="{{ category.id }}" {% if cat == category.id %}selected{% endif %}>{{ category.title }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+
+                <!-- Difficulty Filter -->
+                <div class="relative w-full">
+                    <select onchange='handleFilter()' id='levelFilter' class="w-full px-6 py-2 rounded-lg border border-gray-300 shadow-lg focus:outline-none focus:ring-2 focus:ring-indigo-600 transition duration-300">
+                        <option value="">All Levels</option>
+                        {% for level in levels %}
+                            <option value="{{ level.0 }}" {% if dif == level.0 %}selected{% endif %}>{{ level.1 }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        {% if not courses.exists %}            
+            <!-- No Courses Available Section -->
+            <div class="flex flex-col items-center rounded-lg justify-center py-16 bg-gray-50">
+                <div class="bg-gray-100 rounded-full p-6 mb-6">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-indigo-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m-3-16v6a2 2 0 002 2h6a2 2 0 012 2v10a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6a2 2 0 002-2V2z" />
+                    </svg>
+                </div>
+                <h2 class="text-2xl font-semibold text-gray-800">No Courses Available</h2>
+                <p class="text-gray-600 mt-2 text-center max-w-lg">
+                    We couldn't find any courses at the moment. Please check back later or explore other sections of our platform.
+                </p>
+                <a href="{% url 'home' %}" class="mt-6 bg-indigo-600 text-white px-6 py-3 rounded-lg shadow-lg hover:bg-indigo-500 transition duration-300">
+                    Go Back to Home
+                </a>
+            </div>
+        {% endif %}
+
+        <!-- Start of the Z-pattern Layout (3 Cards per Row) -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {% for course in courses %}
+                <!-- Course Card -->
+                <div class="bg-white rounded-lg shadow-xl hover:shadow-2xl transition-all duration-500 flex flex-col transform hover:scale-105">
+                    <img src="/uploads/{{ course.thumbnail }}" alt="Course Image" class="w-full h-48 object-cover rounded-t-lg mb-4 transition-all duration-500">
+                    <div class="px-6 pb-6">
+                        <h3 class="text-2xl font-semibold text-gray-800 mb-2">{{ course.title }}</h3>
+                        <p class="text-gray-600 mt-2 mb-4">
+                            {{ course.description|truncatewords:12 }}
+                        </p>
+                        
+                        <!-- Category & Difficulty Tags -->
+                        <div class="flex space-x-4 mb-4">
+                            <span class="bg-indigo-100 text-indigo-600 text-sm py-1 px-3 rounded-full flex items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-4 h-4 mr-2">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7h18M3 11h18m-7 4h7"></path>
+                                </svg>
+                                {{ course.category.title }}
+                            </span>
+                            <span class="bg-gray-100 text-gray-600 text-sm py-1 px-3 rounded-full flex items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-4 h-4 mr-2">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4h4V3H5zm5 0v4h4V3h-4zm5 0v4h4V3h-4zm-5 5v4h4V8h-4zm5 0v4h4V8h-4zm-5 5v4h4v-4h-4zm5 0v4h4v-4h-4z"></path>
+                                </svg>
+                                {{ course.get_difficulty_display }}
+                            </span>
+                        </div>
+
+                        <!-- Course Duration and Enroll Button -->
+                        <div class="flex justify-between items-center">
+                            <span class="text-indigo-600 font-semibold">{{ course.duration_weeks }} Weeks</span>
+                            <a href="{% url 'course_detail' pk=course.pk %}" class="bg-indigo-600 text-white px-6 py-2 rounded-full text-sm hover:bg-indigo-700 transition duration-300">Explore</a>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+
+    <script>
+        function handleFilter() {
+            const search = document.getElementById("courseSearch").value
+            const level = document.getElementById('levelFilter').value
+            const category = document.getElementById('categoryFilter').value
+            const params = []
+
+            if (search) {
+                params.push(`q=${search}`)
+            }
+
+            if (level) {
+                params.push(`dif=${level}`)
+            }
+
+            if (category) {
+                params.push(`cat=${category}`)
+            }
+
+            const query = params.length == 0 ? '' : '?' + params.join('&')
+            window.location.href = `{% url 'courses' %}` + query
+        }
+    </script>
+{% endblock content %}

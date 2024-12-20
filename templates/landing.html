@@ -1,0 +1,86 @@
+{% extends '_base.html' %}
+
+{% block title %}Learn Skills, Achieve Your Dreams{% endblock title %}
+
+{% block body %}    
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-r from-indigo-600 to-indigo-400 py-20">
+        <div class="container max-w-7xl mx-auto text-center text-white">
+            <h1 class="text-5xl font-extrabold mb-6">Learn Skills, Achieve Your Dreams</h1>
+            <p class="text-lg mb-8">
+                Discover top-notch learning experiences tailored to your needs. 
+                Build a brighter future with E-Learner.
+            </p>
+            <a href="{% url 'signup' %}" class="px-8 py-4 bg-white text-indigo-600 rounded-full font-semibold hover:bg-gray-200 transition duration-300 text-lg">
+                Start Your Journey
+            </a>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-16">
+        <div class="container max-w-7xl mx-auto text-center">
+            <h2 class="text-3xl font-semibold text-gray-800 mb-8">Why Choose E-Learner?</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition">
+                    <h3 class="text-xl font-bold text-gray-800">Expert Instructors</h3>
+                    <p class="text-gray-600 mt-2">Learn from professionals with real-world experience.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition">
+                    <h3 class="text-xl font-bold text-gray-800">Flexible Learning</h3>
+                    <p class="text-gray-600 mt-2">Access courses anytime, anywhere, on any device.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition">
+                    <h3 class="text-xl font-bold text-gray-800">Certificates of Completion</h3>
+                    <p class="text-gray-600 mt-2">Boost your career with verified certificates.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="bg-gray-50 py-16" id="about">
+        <div class="max-w-screen-xl mx-auto text-center">
+            <h2 class="text-3xl font-bold mb-8 fade-in">About E-Learner</h2>
+            <p class="text-lg text-gray-700 mb-6">We provide world-class online education to help individuals enhance their skills and career prospects. Our platform offers a range of interactive courses taught by seasoned experts in various fields.</p>
+            <a href="{% url 'signup' %}" class="px-8 py-4 text-white bg-indigo-600 rounded-full font-semibold hover:bg-indigo-500 transition duration-300 text-lg">
+                Get Started Today
+            </a>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-16">
+        <div class="container max-w-7xl mx-auto text-center">
+            <h2 class="text-3xl font-semibold text-gray-800 mb-8">What Our Students Say</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="p-6 bg-white rounded-lg shadow hover:shadow-lg transition">
+                    <p class="text-gray-600 italic">"E-Learner helped me land my dream job! Highly recommended."</p>
+                    <h4 class="text-indigo-600 font-semibold mt-4">- Sarah K.</h4>
+                </div>
+                <div class="p-6 bg-white rounded-lg shadow hover:shadow-lg transition">
+                    <p class="text-gray-600 italic">"The courses are well-structured and easy to follow."</p>
+                    <h4 class="text-indigo-600 font-semibold mt-4">- Michael P.</h4>
+                </div>
+                <div class="p-6 bg-white rounded-lg shadow hover:shadow-lg transition">
+                    <p class="text-gray-600 italic">"Learning on my schedule has been a game-changer."</p>
+                    <h4 class="text-indigo-600 font-semibold mt-4">- Lisa M.</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-r from-indigo-600 to-indigo-400 py-20">
+        <div class="container mx-auto text-center text-white">
+            <h1 class="text-5xl font-extrabold mb-6">Learn Skills, Achieve Your Dreams</h1>
+            <p class="text-lg mb-8">
+                Start Your Learning Journey Today,, 
+                Join thousands of learners and start mastering new skills now.
+            </p>
+            <a href="{% url 'signup' %}" class="px-8 py-4 bg-white text-indigo-600 rounded-full font-semibold hover:bg-gray-200 transition duration-300 text-lg">
+                Sign Up Now
+            </a>
+        </div>
+    </section>
+{% endblock body %}

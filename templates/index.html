@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    {% if request.user.is_authenticated %}
+        {% include 'home.html' %}
+    {% else %}
+        {% include 'landing.html' %}
+    {% endif %}    
+{% endblock content %}

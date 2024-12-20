@@ -1,0 +1,13 @@
+{% extends "registration/base.html" %}
+
+{% block title %}Welcome{% endblock title %}
+
+{% block content %}
+    <div class="welcome-message">
+        <h1>Welcome To E-Learner!</h1>
+        <p>Thank you for signing up. We are excited to have you on board!</p>
+        <p>Explore our features and start your journey now.</p>
+    </div>
+
+    <button onclick="window.location.href='{% url 'login' %}'">Login Here</button>
+{% endblock %}

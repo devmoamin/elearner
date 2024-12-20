@@ -1,0 +1,13 @@
+{% extends '_base.html' %}
+{% load static %}
+
+{% block head %}
+    <link rel='stylesheet' href='{% static 'css/main.css' %}' />
+{% endblock head %}
+
+{% block body %}
+    <main class="p-8">
+        {% block content %}
+        {% endblock content %}
+    </main>
+{% endblock body %}

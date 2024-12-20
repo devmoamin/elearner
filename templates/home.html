@@ -1,0 +1,157 @@
+{% extends 'base.html' %}
+
+{% block title %}Home{% endblock title %}
+
+{% block content %}
+    <div class="min-h-screen">
+        <div class="lg:flex lg:gap-8">
+            <!-- Main Container -->
+            <div class="rounded-lg bg-white p-6 lg:w-3/4">
+                <!-- Welcome Section -->
+                <div class="bg-gradient-to-r from-indigo-600 to-blue-500 text-white rounded-lg shadow-md p-8 mb-12">
+                    <h1 class="text-3xl font-bold">Welcome back, {{ request.user.first_name }}!</h1>
+                    <p class="mt-2 text-lg">Continue where you left off or explore something new today!</p>
+                </div>
+
+                <!-- Dashboard Overview -->
+                <section class='mb-8'>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <!-- Enrolled Courses Card -->
+                        <div class="bg-white rounded-lg shadow-md p-6 text-center">
+                            <h3 class="text-gray-800 text-lg font-semibold">Enrolled Courses</h3>
+                            <p class="text-4xl font-bold text-indigo-600 mt-4">{{ current_courses|length }}</p>
+                        </div>
+
+                        <!-- Completed Courses Card -->
+                        <div class="bg-white rounded-lg shadow-md p-6 text-center">
+                            <h3 class="text-gray-800 text-lg font-semibold">Completed Courses</h3>
+                            <p class="text-4xl font-bold text-green-600 mt-4">{{ completed_courses|length }}</p>
+                        </div>
+
+                        <!-- Pending Card -->
+                        <div class="bg-white rounded-lg shadow-md p-6 text-center">
+                            <h3 class="text-gray-800 text-lg font-semibold">Pending Enrollment</h3>
+                            <p class="text-4xl font-bold text-yellow-500 mt-4">{{ pending_courses|length }}</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Current Courses Section -->
+                <section class="mb-12">
+                    <h2 class="text-2xl font-bold text-gray-800 mb-6">Continue Learning...</h2>
+
+                    {% if current_courses|length == 0 %}                        
+                        <!-- If no courses -->
+                        <div class="bg-white rounded-lg shadow-md p-8 text-center">
+                            <div class="flex flex-col items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 text-gray-400 mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m-3-16v6a2 2 0 002 2h6a2 2 0 012 2v10a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 002-2h6a2 2 0 002-2V2z" />
+                                </svg>
+                                <h2 class="text-xl font-semibold text-gray-800">No Current Courses</h2>
+                                <p class="text-gray-600 mt-2">
+                                    You haven't started any new courses yet. Explore new topics and begin your learning journey!
+                                </p>
+                                <a href="{% url 'courses' %}" class="mt-6 bg-indigo-600 text-white px-6 py-3 rounded-lg shadow-md hover:bg-indigo-500 transition duration-300">
+                                    Browse Courses
+                                </a>
+                            </div>
+                        </div>
+                    {% else %}
+                        <!-- Current Courses -->
+                        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                            {% for enrollment in current_courses %}
+                                <div class="bg-white rounded-lg shadow-lg flex flex-col overflow-hidden">
+                                    <img src="/uploads/{{ enrollment.course.thumbnail }}" alt="Course Image" class="h-40 object-cover">
+                                    <div class="p-6">
+                                        <h3 class="text-lg font-semibold text-gray-800">{{ enrollment.course.title }}</h3>
+                                        <p class="text-gray-600 mt-2">{{ enrollment.course.description|truncatewords:12 }}</p>
+                                        <div class="mt-4 flex justify-between items-center">
+                                            <span class="text-sm text-gray-500">Progress: {{ enrollment.progress }}%</span>
+                                            <a href="{% url 'classroom' course=enrollment.course.id lesson=enrollment.next_lesson %}" class="text-indigo-600 text-sm font-semibold hover:underline">Continue &rarr;</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+
+                    {% if pending_courses|length > 0 %}
+                        <h2 class="text-2xl font-bold text-gray-800 my-6">Pending Approval</h2>
+    
+                        <!-- Current Courses -->
+                        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                            {% for enrollment in pending_courses %}
+                                <div class="bg-white rounded-lg shadow-lg flex flex-col overflow-hidden">
+                                    <img src="/uploads/{{ enrollment.course.thumbnail }}" alt="Course Image" class="h-40 object-cover">
+                                    <div class="p-6">
+                                        <h3 class="text-lg font-semibold text-gray-800">{{ enrollment.course.title }}</h3>
+                                        <p class="text-gray-600 mt-2">{{ enrollment.course.description|truncatewords:12 }}</p>
+                                        <div class="mt-4 flex justify-between items-center">
+                                            <span class="text-sm text-gray-500"></span>
+                                            <a href="{% url 'course_detail' pk=enrollment.course.id %}" class="text-indigo-600 text-sm font-semibold hover:underline">Browse</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+
+                    
+                    {% if completed_courses|length > 0 %}
+                        <h2 class="text-2xl font-bold text-gray-800 my-6">Completed Courses</h2>
+    
+                        <!-- Current Courses -->
+                        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                            {% for enrollment in completed_courses %}
+                                <div class="bg-white rounded-lg shadow-lg flex flex-col overflow-hidden">
+                                    <img src="/uploads/{{ enrollment.course.thumbnail }}" alt="Course Image" class="h-40 object-cover">
+                                    <div class="p-6">
+                                        <h3 class="text-lg font-semibold text-gray-800">{{ enrollment.course.title }}</h3>
+                                        <p class="text-gray-600 mt-2">{{ enrollment.course.description|truncatewords:12 }}</p>
+                                        <div class="mt-4 flex justify-between items-center">
+                                            <span class="text-sm text-gray-500"></span>
+                                            <a href="{% url 'course_detail' pk=enrollment.course.id %}" class="text-indigo-600 text-sm font-semibold hover:underline">Browse</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+                </section>
+            </div>
+
+            <!-- Sidebar -->
+            <aside class="relative lg:w-1/4 mt-12 lg:mt-0">
+                <div class='sticky top-[6.6rem] rounded-lg bg-white py-6'>
+                    <!-- Notifications -->
+                    <div class="bg-white rounded-lg px-6">
+                        <h3 class="text-lg font-bold text-gray-800 mb-4">Announcements</h3>
+                        <p class="text-sm text-gray-600 text-center">You have no new announcements.</p>
+                    </div>
+
+                    {% if suggested_courses.exists %}
+                        <!-- Suggested Courses -->
+                        <div class="rounded-lg p-6">
+                            <h3 class="text-lg font-bold text-gray-800 mb-4">Suggested Courses</h3>
+                            <div class="space-y-4">
+                                {% for sg in suggested_courses %}
+                                    <div class="bg-white rounded-lg shadow p-4 flex items-center">
+                                        <div>
+                                            <h4 class="text-sm font-semibold text-gray-800">{{ sg.title }}</h4>
+                                            <p class="text-xs text-gray-600">{{ sg.get_difficulty_display}} | {{ sg.duration_weeks }} Weeks</p>
+                                            <a href="{% url 'course_detail' pk=sg.id %}" class="text-indigo-600 text-xs hover:underline">View Details</a>
+                                        </div>
+                                    </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    {% endif %}
+                </div>
+            </aside>
+        </div>
+    </div>
+{% endblock %}
+
+{% block footer %}
+    {% include 'footer_mini.html' %}
+{% endblock footer %}

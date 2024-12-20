@@ -1,0 +1,511 @@
+[
+    {
+        "model": "courses.coursecategory",
+        "pk": 1,
+        "fields": {
+        "title": "Programming Languages"
+        }
+    },
+    {
+        "model": "courses.coursecategory",
+        "pk": 2,
+        "fields": {
+        "title": "Web Development"
+        }
+    },
+    {
+        "model": "courses.coursecategory",
+        "pk": 3,
+        "fields": {
+        "title": "Data Science"
+        }
+    },
+    {
+        "model": "courses.coursecategory",
+        "pk": 4,
+        "fields": {
+        "title": "Mobile App Development"
+        }
+    },
+    {
+        "model": "courses.coursecategory",
+        "pk": 5,
+        "fields": {
+        "title": "Cloud Computing"
+        }
+    },
+    {
+        "model": "courses.coursecategory",
+        "pk": 6,
+        "fields": {
+        "title": "Artificial Intelligence"
+        }
+    },
+    {   
+        "model": "courses.courseinstructor",
+        "pk": 1,
+        "fields": {
+            "name": "Dr. Robert Johnson",
+            "bio": "Dr. Robert Johnson is a seasoned educator with over 15 years of experience in teaching software engineering and systems architecture. He has worked in both academic and industrial settings, guiding students and professionals alike through the complexities of designing scalable and efficient software systems. Dr. Johnson is passionate about bridging the gap between theory and practice, and he regularly collaborates with tech companies to provide real-world insights to his courses. His approach to teaching is hands-on, emphasizing practical skills alongside theoretical knowledge.",
+            "photo": "instructors/robert_johnson.jpg"
+        }
+    },
+    {
+        "model": "courses.courseinstructor",
+        "pk": 2,
+        "fields": {
+            "name": "Professor Linda Carter",
+            "bio": "Professor Linda Carter is a recognized leader in the field of digital marketing, with over 18 years of experience in helping businesses develop impactful online strategies. She has worked with top global brands and startups, enabling them to enhance their online presence through innovative SEO techniques, content marketing, and social media strategies. Professor Carter’s teaching style blends academic rigor with real-world applications, and she is known for her interactive and engaging approach to teaching. Her courses focus on both the technical and creative aspects of digital marketing, ensuring that students are well-equipped to succeed in a fast-evolving digital world.",
+            "photo": "instructors/linda_carter.jpg"
+        }
+    },
+    {
+        "model": "courses.courseinstructor",
+        "pk": 3,
+        "fields": {
+            "name": "Dr. Alan Mitchell",
+            "bio": "Dr. Alan Mitchell is an internationally recognized expert in the field of Artificial Intelligence and Machine Learning. With a PhD in AI, Dr. Mitchell has spent over 20 years researching and teaching the applications of neural networks, deep learning, and natural language processing. He has worked on cutting-edge projects with top research institutions and tech companies, developing algorithms that power some of the world’s most sophisticated AI systems. Dr. Mitchell is passionate about educating the next generation of AI specialists, and his courses are designed to provide students with the knowledge and skills needed to tackle real-world challenges using AI and machine learning techniques.",
+            "photo": "instructors/alan_mitchell.jpg"
+        }
+    },
+    {
+        "model": "courses.courseinstructor",
+        "pk": 4,
+        "fields": {
+            "name": "Sarah Williams",
+            "bio": "Sarah Williams is a professional graphic designer and illustrator with over 10 years of experience in the creative industry. She has worked with a diverse range of clients, from startups to well-established corporations, creating visually appealing designs that communicate brand values and messages effectively. Sarah specializes in digital design, including web and app design, logo creation, and typography. As an educator, Sarah is committed to helping students not only develop technical skills in design software but also cultivate their own creative processes. Her courses emphasize the importance of innovation, user experience, and visual storytelling in the design world.",
+            "photo": "instructors/sarah_williams.jpg"
+        }
+    },
+    {
+        "model": "courses.courseinstructor",
+        "pk": 5,
+        "fields": {
+            "name": "Michael Thompson",
+            "bio": "Michael Thompson is a seasoned project management professional with more than 20 years of experience in leading large-scale projects across a variety of industries, including IT, construction, and product development. He is a certified Scrum Master and Agile Coach, specializing in Agile project management methodologies. Michael has helped numerous organizations adopt Agile practices and transform their project management processes to become more efficient and adaptable to changing business needs. In his teaching, Michael emphasizes the importance of clear communication, team collaboration, and effective time management. His courses provide practical tools and techniques for managing projects in today’s fast-paced and competitive environments.",
+            "photo": "instructors/michael_thompson.jpg"
+        }
+    },
+    {
+        "model": "courses.courseinstructor",
+        "pk": 6,
+        "fields": {
+            "name": "Emily Roberts",
+            "bio": "Emily Roberts is a front-end web development specialist with a focus on modern web technologies like React, Vue.js, and JavaScript. With over 8 years of experience in the tech industry, Emily has worked as a lead developer on several high-profile web applications. She is passionate about creating responsive and user-friendly web experiences, and she loves sharing her expertise with students. Emily’s teaching approach is interactive and project-based, where students learn by building real-world applications from scratch. In her courses, she emphasizes the importance of clean code, performance optimization, and maintaining a user-centered design approach throughout the development process.",
+            "photo": "instructors/emily_roberts.jpg"
+        }
+    },
+    {
+        "model": "courses.course",
+        "pk": 1,
+        "fields": {
+            "title": "Mastering Python for Software Engineering",
+            "description": "This course provides an in-depth understanding of Python, one of the most popular programming languages for software engineering. Participants will explore Python's key features, libraries, and real-world applications. By completing this course, students will gain hands-on experience in building scalable and efficient software solutions, applying object-oriented programming, and leveraging Python's advanced functionalities. Whether you are a beginner or an intermediate programmer, this course will equip you with the necessary skills to excel in the field of software engineering.",
+            "difficulty": "BE",
+            "category": 1,
+            "instructor": 1,
+            "created_at": "2024-12-06T12:00:00Z",
+            "rating": 4.8,
+            "duration_weeks": 8,
+            "thumbnail": "course_thumbnails/python_intro.webp"
+        }
+    },
+    {
+        "model": "courses.courselesson",
+        "pk": 1,
+        "fields": {
+            "course": 1,
+            "title": "Introduction to Python Programming",
+            "brief": "An overview of Python's capabilities and setup.",
+            "description": "This lesson introduces Python programming, its history, and its versatility in modern software development. You will learn how to set up Python on your machine, understand Python syntax, and write your first Python script. By the end of this lesson, you will have a strong foundation to build upon for future lessons.",
+            "youtube_link": "https://www.youtube.com/embed/rfscVS0vtbw"
+        }
+    },
+    {
+        "model": "courses.courselesson",
+        "pk": 2,
+        "fields": {
+            "course": 1,
+            "title": "Python Data Types and Variables",
+            "brief": "Explore variables and basic data types in Python.",
+            "description": "In this lesson, we will dive into Python's core data types, including integers, floats, strings, and booleans. You will also learn about variables, how to declare them, and how to manipulate their values. The lesson includes practical examples and exercises to solidify your understanding of Python's data handling capabilities.",
+            "youtube_link": "https://www.youtube.com/embed/5iKRGQFRzCg"
+        }
+    },
+    {
+        "model": "courses.courselesson",
+        "pk": 3,
+        "fields": {
+            "course": 1,
+            "title": "Control Flow: Loops and Conditionals",
+            "brief": "Learn to control program flow using loops and conditions.",
+            "description": "This lesson explains Python's control flow mechanisms, such as if-else statements, for-loops, and while-loops. You'll understand how to use conditional statements and loops to make your programs dynamic and responsive. The session includes practical code snippets and challenges to test your skills.",
+            "youtube_link": "https://www.youtube.com/embed/WvhQhj4n6b8"
+        }
+    },
+    {
+        "model": "courses.courselesson",
+        "pk": 4,
+        "fields": {
+            "course": 1,
+            "title": "Functions and Modules",
+            "brief": "Create reusable code with functions and modules.",
+            "description": "Functions are a fundamental building block of Python programming. In this lesson, you'll learn how to define functions, pass arguments, and return values. You'll also explore Python modules and how they enable code reuse. By the end, you'll be able to create clean, modular, and efficient Python programs.",
+            "youtube_link": "https://www.youtube.com/embed/RSl87lqOXDE"
+        }
+    },
+    {
+        "model": "courses.courselesson",
+        "pk": 5,
+        "fields": {
+            "course": 1,
+            "title": "Object-Oriented Programming in Python",
+            "brief": "Understand Python's OOP concepts: classes and objects.",
+            "description": "This lesson introduces the concepts of object-oriented programming (OOP) in Python, including classes, objects, inheritance, and encapsulation. You'll learn how to structure your programs using OOP principles and create scalable software. Hands-on examples will solidify your understanding of these powerful techniques.",
+            "youtube_link": "https://www.youtube.com/embed/JeznW_7DlP0"
+        }
+    },
+    {
+        "model": "courses.courselesson",
+        "pk": 6,
+        "fields": {
+            "course": 1,
+            "title": "File Handling in Python",
+            "brief": "Learn to read and write files using Python.",
+            "description": "File handling is essential for working with data. In this lesson, you'll learn how to open, read, write, and manipulate files in Python. We will cover text files and CSV files, along with error handling techniques to ensure smooth file operations.",
+            "youtube_link": "https://www.youtube.com/embed/uhfY-B5NpEQ"
+        }
+    },
+    {
+        "model": "courses.courselesson",
+        "pk": 7,
+        "fields": {
+            "course": 1,
+            "title": "Working with Libraries and APIs",
+            "brief": "Explore Python libraries and connect with APIs.",
+            "description": "Python has a vast ecosystem of libraries that simplify software development. This lesson covers key libraries like requests, NumPy, and Pandas, as well as how to connect to external APIs. You will complete practical exercises that integrate real-world data into your applications.",
+            "youtube_link": "https://www.youtube.com/embed/x6x5vRR9Qk8"
+        }
+    },
+    {
+        "model": "courses.courselesson",
+        "pk": 8,
+        "fields": {
+            "course": 1,
+            "title": "Error Handling and Debugging",
+            "brief": "Learn techniques for debugging and handling errors.",
+            "description": "In this lesson, you will learn how to handle errors using Python's try-except blocks and debugging tools. We will explore techniques to identify and resolve issues in your code, making your programs more reliable and user-friendly.",
+            "youtube_link": "https://www.youtube.com/embed/4W2I4V6YMEo"
+        }
+    },
+    {
+        "model": "courses.course",
+        "pk": 2,
+        "fields": {
+            "title": "Introduction to Cloud Infrastructure",
+            "description": "This course provides an in-depth understanding of cloud infrastructure and the essential components needed to build scalable and efficient cloud-based systems. Participants will explore the fundamentals of cloud computing, learn about leading cloud platforms like AWS, Azure, and GCP, and gain hands-on experience with managing cloud resources. Topics include virtualization, networking, storage solutions, and security best practices. By the end of this course, learners will have a solid foundation in cloud technologies, equipping them to pursue advanced cloud certifications and professional roles.",
+            "category": 5,
+            "instructor": 5,
+            "difficulty": "BE",
+            "created_at": "2024-12-06T12:00:00Z",
+            "rating": 4.6,
+            "duration_weeks": 6,
+            "thumbnail": "course_thumbnails/cloud_infrastructure_intro.webp"
+        }
+    },
+    {
+        "model": "courses.courselesson",
+        "pk": 13,
+        "fields": {
+            "course": 2,
+            "title": "Introduction to Cloud Computing",
+            "brief": "Understand what cloud computing is and why it matters.",
+            "description": "This lesson introduces learners to the concept of cloud computing, explaining its significance in today's technology-driven world. We will cover the basics of cloud service models, such as Infrastructure as a Service (IaaS), Platform as a Service (PaaS), and Software as a Service (SaaS). The lesson will also provide real-world examples of cloud adoption and benefits for businesses and individuals.",
+            "youtube_link": "https://www.youtube.com/embed/x4U8wQf_izc"
+        }
+    },
+    {
+        "model": "courses.courselesson",
+        "pk": 14,
+        "fields": {
+            "course": 2,
+            "title": "Overview of Cloud Service Providers",
+            "brief": "Explore leading cloud platforms and their features.",
+            "description": "This lesson introduces learners to popular cloud service providers, including Amazon Web Services (AWS), Microsoft Azure, and Google Cloud Platform (GCP). Students will compare features, pricing models, and use cases of each platform. By understanding the strengths and weaknesses of these providers, learners will be able to make informed decisions when selecting a cloud platform.",
+            "youtube_link": "https://www.youtube.com/embed/BS2g2m0x4Yw"
+        }
+    },
+    {
+        "model": "courses.courselesson",
+        "pk": 15,
+        "fields": {
+            "course": 2,
+            "title": "Virtualization and Cloud Architecture",
+            "brief": "Learn about virtualization and how it powers the cloud.",
+            "description": "Virtualization is the backbone of cloud infrastructure, enabling multiple virtual machines to run on a single physical server. In this lesson, learners will understand the principles of virtualization, hypervisors, and virtual machine management. We will also discuss the role of cloud architecture in supporting large-scale distributed systems.",
+            "youtube_link": "https://www.youtube.com/embed/CM8N9M6EYzg"
+        }
+    },
+    {
+        "model": "courses.courselesson",
+        "pk": 16,
+        "fields": {
+            "course": 2,
+            "title": "Cloud Storage Solutions",
+            "brief": "Understand storage options in the cloud.",
+            "description": "This lesson covers the various storage solutions offered by cloud providers, such as object storage, block storage, and file storage. Students will learn about storage use cases, data durability, scalability, and cost optimization strategies. Practical demonstrations will showcase how to configure and manage cloud storage.",
+            "youtube_link": "https://www.youtube.com/embed/3scgqf3CSlw"
+        }
+    },
+    {
+        "model": "courses.courselesson",
+        "pk": 17,
+        "fields": {
+            "course": 2,
+            "title": "Networking in Cloud Environments",
+            "brief": "Learn how cloud networking works.",
+            "description": "This lesson introduces cloud networking concepts, including Virtual Private Clouds (VPCs), subnets, routing, and firewalls. Students will gain an understanding of how to create secure and reliable cloud network architectures that connect resources across regions and availability zones.",
+            "youtube_link": "https://www.youtube.com/embed/U2p7wJTLn5k"
+        }
+    },
+    {
+        "model": "courses.courselesson",
+        "pk": 18,
+        "fields": {
+            "course": 2,
+            "title": "Security in the Cloud",
+            "brief": "Discover best practices for cloud security.",
+            "description": "Security is a critical aspect of cloud infrastructure. In this lesson, learners will explore best practices for securing cloud environments, including identity and access management (IAM), encryption, and monitoring tools. We will also discuss common security risks and mitigation strategies.",
+            "youtube_link": "https://www.youtube.com/embed/3d2g4hKmCFM"
+        }
+    },
+    {
+        "model": "courses.courselesson",
+        "pk": 19,
+        "fields": {
+            "course": 2,
+            "title": "Deploying Applications in the Cloud",
+            "brief": "Learn how to deploy and manage cloud applications.",
+            "description": "In this lesson, learners will understand the process of deploying applications in cloud environments. Topics include containerization with Docker, orchestration with Kubernetes, and serverless computing options. Students will gain practical experience through hands-on examples of cloud deployments.",
+            "youtube_link": "https://www.youtube.com/embed/PtDQd1M4fxs"
+        }
+    },
+    {
+        "model": "courses.courselesson",
+        "pk": 20,
+        "fields": {
+            "course": 2,
+            "title": "Cost Optimization in Cloud Infrastructure",
+            "brief": "Learn strategies to optimize cloud costs.",
+            "description": "This lesson focuses on cost management strategies in cloud infrastructure. Students will learn about resource monitoring, scaling policies, reserved instances, and tools for cost optimization. By implementing these practices, businesses can maximize the value of their cloud investments.",
+            "youtube_link": "https://www.youtube.com/embed/wEp_Y5XzO8k"
+        }
+    },
+    {
+        "model": "courses.course",
+        "pk": 3,
+        "fields": {
+            "title": "Cloud Native Applications",
+            "description": "Dive deep into the world of cloud-native application development, leveraging microservices architecture and containerized solutions. This course explores Kubernetes, Docker, and advanced CI/CD pipelines for scalable, efficient, and modern cloud-based solutions.",
+            "difficulty": "IN",
+            "category": 5,
+            "instructor": 5,
+            "rating": 4.6,
+            "duration_weeks": 10,
+            "thumbnail": "course_thumbnails/cloud_native_applications.jpg",
+            "created_at": "2024-12-06T12:00:00Z"
+        }
+    },
+    {
+        "model": "courses.courselesson",
+        "pk": 21,
+        "fields": {
+            "title": "Introduction to Cloud-Native Concepts",
+            "brief": "Understand the foundations of cloud-native development.",
+            "description": "In this lesson, you’ll learn about the core principles of cloud-native applications, such as microservices, containerization, and infrastructure as code. We’ll explore why these technologies are critical for modern application development and how they enable agility, scalability, and resilience.",
+            "youtube_link": "https://www.youtube.com/embed/TUXui5ItBiE",
+            "course": 3
+        }
+    },
+    {
+        "model": "courses.courselesson",
+        "pk": 22,
+        "fields": {
+            "title": "Getting Started with Docker",
+            "brief": "Learn how to containerize applications with Docker.",
+            "description": "This lesson provides an in-depth look into Docker, a popular containerization tool. You’ll understand how to create, manage, and deploy Docker containers, along with best practices for containerized application development.",
+            "youtube_link": "https://www.youtube.com/embed/3c-iBn73dDE",
+            "course": 3
+        }
+    },
+    {
+        "model": "courses.courselesson",
+        "pk": 23,
+        "fields": {
+            "title": "Kubernetes Fundamentals",
+            "brief": "Master the basics of Kubernetes orchestration.",
+            "description": "Discover Kubernetes, the leading container orchestration platform. This lesson covers the architecture, components, and operations of Kubernetes, including deploying and managing containerized applications in a cluster.",
+            "youtube_link": "https://www.youtube.com/embed/cpbfZe4te6g",
+            "course": 3
+        }
+    },
+    {
+        "model": "courses.courselesson",
+        "pk": 24,
+        "fields": {
+            "title": "Microservices Architecture",
+            "brief": "Understand microservices design principles.",
+            "description": "Explore the design and implementation of microservices architectures. Learn how to decompose monolithic applications into independent, modular services and the challenges associated with managing distributed systems.",
+            "youtube_link": "https://www.youtube.com/embed/wTcVnDSYteU",
+            "course": 3
+        }
+    },
+    {
+        "model": "courses.courselesson",
+        "pk": 25,
+        "fields": {
+            "title": "Building CI/CD Pipelines",
+            "brief": "Automate application deployment with CI/CD.",
+            "description": "This lesson delves into continuous integration and continuous deployment (CI/CD) pipelines. Learn how to automate build, test, and deployment workflows for cloud-native applications using industry-standard tools.",
+            "youtube_link": "https://www.youtube.com/embed/4ISyXfAsNTI",
+            "course": 3
+        }
+    },
+    {
+        "model": "courses.courselesson",
+        "pk": 26,
+        "fields": {
+            "title": "Service Mesh with Istio",
+            "brief": "Secure and manage microservices with Istio.",
+            "description": "Dive into service mesh technology and understand how Istio simplifies service discovery, load balancing, and observability for microservices. This lesson also covers securing inter-service communication and traffic policies.",
+            "youtube_link": "https://www.youtube.com/embed/6t-1Iho4MUA",
+            "course": 3
+        }
+    },
+    {
+        "model": "courses.courselesson",
+        "pk": 27,
+        "fields": {
+            "title": "Scaling Applications on Kubernetes",
+            "brief": "Learn advanced scaling techniques on Kubernetes.",
+            "description": "Explore Kubernetes scaling features such as horizontal pod autoscaling and cluster autoscaling. This lesson also covers monitoring resource usage and optimizing application performance in a Kubernetes environment.",
+            "youtube_link": "https://www.youtube.com/embed/9zbtAXE9em4",
+            "course": 3
+        }
+    },
+    {
+        "model": "courses.courselesson",
+        "pk": 28,
+        "fields": {
+            "title": "Serverless Computing",
+            "brief": "Dive into serverless architecture and its benefits.",
+            "description": "Understand serverless computing and how it fits into the cloud-native paradigm. This lesson covers key concepts, popular frameworks, and use cases for serverless architectures in modern application development.",
+            "youtube_link": "https://www.youtube.com/embed/8EaouZlVfhM",
+            "course": 3
+        }
+    },
+    {
+        "model": "courses.course",
+        "pk": 4,
+        "fields": {
+            "title": "Advanced React Patterns and Techniques",
+            "description": "Master the art of React development with advanced patterns and techniques that help you build scalable, maintainable, and performant applications. This course dives deep into the world of state management, component composition, and hooks, ensuring you gain the skills needed to tackle complex front-end challenges. By the end of this course, you will have built a series of projects applying these advanced concepts, preparing you to excel in modern web development.",
+            "created_at": "2024-12-19T12:00:00Z",
+            "rating": 4.8,
+            "duration_weeks": 8,
+            "thumbnail": "course_thumbnails/advanced_react_patterns.webp",
+            "category": 2,
+            "difficulty": "AD",
+            "instructor": 6
+        }
+    },
+    {
+        "model": "courses.courselesson",
+        "pk": 29,
+        "fields": {
+            "title": "Introduction to Advanced React",
+            "brief": "Understand the goals of advanced React concepts.",
+            "description": "In this lesson, we set the foundation for the course by introducing the importance of advanced React techniques. You will learn about the challenges faced in large-scale applications and how mastering these patterns can simplify development. Topics covered include state management, component optimization, and the role of hooks in modern React development.",
+            "youtube_link": "https://www.youtube.com/embed/Ke90Tje7VS0",
+            "course": 4
+        }
+    },
+    {
+        "model": "courses.courselesson",
+        "pk": 30,
+        "fields": {
+            "title": "State Management with Context API",
+            "brief": "Learn state management using Context API.",
+            "description": "This lesson explores the Context API as an effective way to manage global state in React applications. You'll understand the trade-offs of using Context versus other solutions like Redux. Hands-on examples include implementing a theme toggler and sharing data between deeply nested components.",
+            "youtube_link": "https://www.youtube.com/embed/35lXWvCuM8o",
+            "course": 4
+        }
+    },
+    {
+        "model": "courses.courselesson",
+        "pk": 31,
+        "fields": {
+            "title": "Optimizing Performance with React.memo",
+            "brief": "Boost app performance with React.memo.",
+            "description": "Learn how to enhance application performance by preventing unnecessary renders using React.memo. This lesson dives into real-world scenarios, explaining when and how to use memoization effectively. By the end, you'll implement optimizations in a sample project, ensuring smoother performance.",
+            "youtube_link": "https://www.youtube.com/embed/wXLf18DsV-I",
+            "course": 4
+        }
+    },
+    {
+        "model": "courses.courselesson",
+        "pk": 32,
+        "fields": {
+            "title": "Building Custom Hooks",
+            "brief": "Create reusable custom hooks.",
+            "description": "Custom hooks are a powerful feature in React that help abstract logic and make components cleaner. This lesson teaches you how to create and utilize custom hooks for data fetching, form validation, and more. You'll work on practical examples to solidify your understanding.",
+            "youtube_link": "https://www.youtube.com/embed/3qBXWUpoPHo",
+            "course": 4
+        }
+    },
+    {
+        "model": "courses.courselesson",
+        "pk": 33,
+        "fields": {
+            "title": "Higher-Order Components",
+            "brief": "Explore the concept of HOCs in React.",
+            "description": "Higher-Order Components (HOCs) are an advanced technique in React for reusing component logic. This lesson walks you through creating and using HOCs effectively. Examples include authentication and data fetching patterns, ensuring you can apply HOCs in various scenarios.",
+            "youtube_link": "https://www.youtube.com/embed/mTYm-50NNFY",
+            "course": 4
+        }
+    },
+    {
+        "model": "courses.courselesson",
+        "pk": 34,
+        "fields": {
+            "title": "Render Props Pattern",
+            "brief": "Learn the render props pattern in React.",
+            "description": "The render props pattern provides a unique way to share logic between components. In this lesson, you'll discover how to implement and use render props effectively. Practical examples include building a reusable data-fetching component and handling animations.",
+            "youtube_link": "https://www.youtube.com/embed/BcAYzv4wlQ8",
+            "course": 4
+        }
+    },
+    {
+        "model": "courses.courselesson",
+        "pk": 35,
+        "fields": {
+            "title": "Testing React Applications",
+            "brief": "Test React apps with confidence.",
+            "description": "Testing is a critical part of building reliable applications. This lesson covers testing strategies for React components using tools like Jest and React Testing Library. You'll write tests for various component types, ensuring your applications are robust and maintainable.",
+            "youtube_link": "https://www.youtube.com/embed/ML743nrkMHw",
+            "course": 4
+        }
+    },
+    {
+        "model": "courses.courselesson",
+        "pk": 36,
+        "fields": {
+            "title": "Deploying React Applications",
+            "brief": "Learn to deploy React apps effectively.",
+            "description": "Deploying React applications is the final step in the development process. This lesson guides you through the deployment of React projects to platforms like Vercel, Netlify, and AWS. You'll configure build scripts, environment variables, and learn best practices for a seamless deployment process.",
+            "youtube_link": "https://www.youtube.com/embed/-pHXkXNNj7g",
+            "course": 4
+        }
+    }    
+]
+    

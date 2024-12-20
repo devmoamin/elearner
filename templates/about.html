@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+
+{% block title %}About Us{% endblock title %}
+
+{% block content %}
+    <!-- About Us Content Section -->
+    <div class="px-6 lg:px-24">
+        <div class="max-w-7xl mx-auto">
+            <!-- Header Section -->
+            <div class="rounded-lg mb-10 bg-indigo-600 text-white py-6">
+                <div class="max-w-7xl mx-auto px-6 text-center">
+                    <h1 class="text-4xl font-semibold">About E-Learner</h1>
+                    <p class="text-lg mt-2">We're on a mission to make learning accessible and enjoyable for everyone, anywhere.</p>
+                </div>
+            </div>
+
+            <!-- Introduction Section -->
+            <section class="bg-white rounded-lg shadow-lg p-6 mb-10">
+                <h2 class="text-2xl font-semibold text-indigo-600">Our Mission</h2>
+                <p class="text-gray-700 mt-4">At E-Learner, we believe that education is the key to unlocking potential. Our mission is to provide accessible, affordable, and high-quality courses to learners all around the world. Whether you're looking to advance your career, acquire new skills, or explore new passions, E-Learner is here to help you achieve your goals.</p>
+            </section>
+
+            <!-- Our Values Section -->
+            <section class="bg-white rounded-lg shadow-lg p-6 mb-10">
+                <h2 class="text-2xl font-semibold text-indigo-600">Our Values</h2>
+                <p class="text-gray-700 mt-4">We are driven by our core values, which guide everything we do:</p>
+                <ul class="list-disc pl-6 mt-4 text-gray-700">
+                    <li><strong>Quality Education:</strong> We strive to provide the best learning experience through expertly designed courses and quality content.</li>
+                    <li><strong>Inclusivity:</strong> Education should be available to everyone, regardless of location or background. We aim to provide resources that are accessible to all.</li>
+                    <li><strong>Innovation:</strong> We are constantly evolving our platform, integrating the latest technology to improve the learning experience.</li>
+                    <li><strong>Community:</strong> Learning is more fun when it’s shared. We foster a supportive and engaging community where learners can collaborate and grow together.</li>
+                </ul>
+            </section>
+
+            <!-- Our Approach Section -->
+            <section class="bg-white rounded-lg shadow-lg p-6 mb-10">
+                <h2 class="text-2xl font-semibold text-indigo-600">Our Approach</h2>
+                <p class="text-gray-700 mt-4">At E-Learner, we take a learner-centric approach to online education. Our platform is designed to make learning flexible, interactive, and fun. We provide:</p>
+                <ul class="list-disc pl-6 mt-4 text-gray-700">
+                    <li><strong>Interactive Courses:</strong> Our courses are designed to keep you engaged through quizzes, projects, and hands-on learning.</li>
+                    <li><strong>Expert Instructors:</strong> Learn from industry professionals who bring real-world experience to the classroom.</li>
+                    <li><strong>Community Support:</strong> Join a vibrant community where you can ask questions, share knowledge, and connect with other learners.</li>
+                    <li><strong>Accessible Learning:</strong> With our mobile-friendly platform, you can learn at your own pace, from anywhere in the world.</li>
+                </ul>
+            </section>
+
+            <!-- Call to Action -->
+            <section class="text-center mt-10">
+                <h2 class="text-3xl font-semibold text-indigo-600">Join E-Learner Today!</h2>
+                <p class="text-gray-700 mt-4">Ready to start your learning journey? Sign up today and gain access to thousands of courses designed to help you succeed.</p>
+                <a href="{% url 'signup' %}" class="mt-6 inline-block bg-indigo-600 text-white py-3 px-6 rounded-lg text-lg hover:bg-indigo-700">Get Started</a>
+            </section>
+
+        </div>
+    </div>
+{% endblock content %}

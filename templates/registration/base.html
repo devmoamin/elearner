@@ -1,0 +1,15 @@
+{% extends '_base.html' %}
+{% load static %}
+
+{% block head %}
+    <link rel='stylesheet' href='{% static 'css/accounts.css' %}' />
+{% endblock head %}
+
+{% block body %}
+    <div class="min-h-screen flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-md w-full space-y-6 bg-white p-8 rounded-lg shadow-lg">
+            {% block content %}
+            {% endblock content %}
+        </div>
+    </div>
+{% endblock body %}
