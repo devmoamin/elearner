@@ -1,6 +1,5 @@
 import uuid
 from django.db import models
-from django.http import Http404
 from django.contrib.auth.models import User
 from django.utils import timezone
 
@@ -13,50 +12,44 @@ COURSE_DIFFICULTY_OPTIONS = [
 
 class CourseManager(models.Manager):
     def enroll(self, user, course_id):
-        exists = CourseEnrollment.objects.filter(course=course_id, user=user).exists()
-        if exists:
-            return
+        exists = CourseEnrollment.objects.filter(course=course_id, user=user).first()
+        if exists is not None:
+            return exists
         
         enrollment = CourseEnrollment(course_id=course_id, user=user)
         enrollment.save()
+        return enrollment
 
     def complete_lesson(self, user, course_id, lesson_id):
-        try:
-            course = self.get(id=course_id)
-            if not user.is_authenticated or not course.is_enrolled(user):
-                raise Course.DoesNotExist
-            
-            lesson = course.lessons.get(id=lesson_id)
-            enrollment = course.enrollments.get(user=user)
+        course = self.get(id=course_id)
+        if not user.is_authenticated or not course.is_enrolled(user):
+            raise Course.DoesNotExist
+        
+        lesson = course.lessons.get(id=lesson_id)
+        enrollment = course.enrollments.get(user=user)
 
-            exists = enrollment.attended_lessons.contains(lesson)
-            if not exists:
-                enrollment.attended_lessons.add(lesson)
+        exists = enrollment.attended_lessons.contains(lesson)
+        if not exists:
+            enrollment.attended_lessons.add(lesson)
 
-            next_lesson = course.lessons.filter(id__gt=lesson_id).first()
-            if next_lesson is not None:
-                enrollment.current_lesson = next_lesson
-                enrollment.save()
-                return next_lesson.id
-            
-            if enrollment.completed_date is None:
-                enrollment.completed_date = timezone.now()
-                enrollment.certificate_id = uuid.uuid4().hex
-                enrollment.save()
-
-        except (Course.DoesNotExist, CourseLesson.DoesNotExist):
-            raise Http404("No lesson found matching the query")
+        next_lesson = course.lessons.filter(id__gt=lesson_id).first()
+        if next_lesson is not None:
+            enrollment.current_lesson = next_lesson
+            enrollment.save()
+            return next_lesson.id
+        
+        if enrollment.completed_date is None:
+            enrollment.completed_date = timezone.now()
+            enrollment.certificate_id = uuid.uuid4().hex
+            enrollment.save()
 
     def get_lesson(self, user, course_id, lesson_id):
-        try:
-            course = Course.objects.get(id=course_id)
-            if not user.is_authenticated or not course.is_enrolled(user):
-                raise Course.DoesNotExist
-            
-            lesson = course.lessons.get(id=lesson_id)
-            return lesson
-        except (Course.DoesNotExist, CourseLesson.DoesNotExist):
-            raise Http404("No lesson found matching the query")
+        course = Course.objects.get(id=course_id)
+        if not user.is_authenticated or not course.is_enrolled(user):
+            raise Course.DoesNotExist
+        
+        lesson = course.lessons.get(id=lesson_id)
+        return lesson
         
     def get_user_courses(self, user):
         enrollments = CourseEnrollment.objects.filter(user=user).all()
@@ -104,7 +97,6 @@ class Course(models.Model):
     difficulty = models.CharField(max_length=5, choices=COURSE_DIFFICULTY_OPTIONS)
     duration_weeks = models.PositiveIntegerField()
     instructor = models.ForeignKey(CourseInstructor, on_delete=models.CASCADE, related_name='instructed_courses')
-    rating = models.FloatField(default=0.0)
     thumbnail = models.ImageField(upload_to='course_thumbnails/')
     created_at = models.DateTimeField(auto_now_add=True)
 
@@ -123,12 +115,8 @@ class Course(models.Model):
         return self.enrollments.filter(user=user).first()
     
     def is_enrolled(self, user):
-        if not user.is_authenticated:
-            return False
-        return self.enrollments.filter(user=user).exists()
-    
-    def enroll(self, user):
-        self.__class__.objects.enroll(user, self)
+        enrollment = self.get_enrollment(user)
+        return enrollment is not None and enrollment.approved
 
 
 class CourseLesson(models.Model):
@@ -173,3 +161,8 @@ class CourseEnrollment(models.Model):
         lessons_count = self.course.lessons.count()
         attended_count = self.attended_lessons.count()
         return lessons_count == attended_count
+    
+    @property
+    def can_download_certificate(self):
+        return self.approved and self.is_completed
+    

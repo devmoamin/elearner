@@ -1,14 +1,17 @@
 from django.contrib import admin
 from courses.models import CourseCategory, Course, CourseLesson, CourseEnrollment, CourseInstructor
+
 # Register your models here.
 
 class CourseLessonInline(admin.StackedInline):
     model = CourseLesson
     extra = 0
 
+
 class CourseAdmin(admin.ModelAdmin):
     model = Course
     inlines = [CourseLessonInline]
+
 
 class CourseEnrollmentAdmin(admin.ModelAdmin):
     model = CourseEnrollment
@@ -27,6 +30,7 @@ class CourseEnrollmentAdmin(admin.ModelAdmin):
     
     def get_actions(self, request):
         return {}
+
 
 admin.site.register(CourseCategory)
 admin.site.register(Course, CourseAdmin)

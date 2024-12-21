@@ -105,7 +105,6 @@
             "category": 1,
             "instructor": 1,
             "created_at": "2024-12-06T12:00:00Z",
-            "rating": 4.8,
             "duration_weeks": 8,
             "thumbnail": "course_thumbnails/python_intro.webp"
         }
@@ -129,7 +128,7 @@
             "title": "Python Data Types and Variables",
             "brief": "Explore variables and basic data types in Python.",
             "description": "In this lesson, we will dive into Python's core data types, including integers, floats, strings, and booleans. You will also learn about variables, how to declare them, and how to manipulate their values. The lesson includes practical examples and exercises to solidify your understanding of Python's data handling capabilities.",
-            "youtube_link": "https://www.youtube.com/embed/5iKRGQFRzCg"
+            "youtube_link": "https://www.youtube.com/embed/rfscVS0vtbw"
         }
     },
     {
@@ -162,7 +161,7 @@
             "title": "Object-Oriented Programming in Python",
             "brief": "Understand Python's OOP concepts: classes and objects.",
             "description": "This lesson introduces the concepts of object-oriented programming (OOP) in Python, including classes, objects, inheritance, and encapsulation. You'll learn how to structure your programs using OOP principles and create scalable software. Hands-on examples will solidify your understanding of these powerful techniques.",
-            "youtube_link": "https://www.youtube.com/embed/JeznW_7DlP0"
+            "youtube_link": "https://www.youtube.com/embed/rfscVS0vtbw"
         }
     },
     {
@@ -173,7 +172,7 @@
             "title": "File Handling in Python",
             "brief": "Learn to read and write files using Python.",
             "description": "File handling is essential for working with data. In this lesson, you'll learn how to open, read, write, and manipulate files in Python. We will cover text files and CSV files, along with error handling techniques to ensure smooth file operations.",
-            "youtube_link": "https://www.youtube.com/embed/uhfY-B5NpEQ"
+            "youtube_link": "https://www.youtube.com/embed/rfscVS0vtbw"
         }
     },
     {
@@ -184,7 +183,7 @@
             "title": "Working with Libraries and APIs",
             "brief": "Explore Python libraries and connect with APIs.",
             "description": "Python has a vast ecosystem of libraries that simplify software development. This lesson covers key libraries like requests, NumPy, and Pandas, as well as how to connect to external APIs. You will complete practical exercises that integrate real-world data into your applications.",
-            "youtube_link": "https://www.youtube.com/embed/x6x5vRR9Qk8"
+            "youtube_link": "https://www.youtube.com/embed/rfscVS0vtbw"
         }
     },
     {
@@ -195,7 +194,7 @@
             "title": "Error Handling and Debugging",
             "brief": "Learn techniques for debugging and handling errors.",
             "description": "In this lesson, you will learn how to handle errors using Python's try-except blocks and debugging tools. We will explore techniques to identify and resolve issues in your code, making your programs more reliable and user-friendly.",
-            "youtube_link": "https://www.youtube.com/embed/4W2I4V6YMEo"
+            "youtube_link": "https://www.youtube.com/embed/rfscVS0vtbw"
         }
     },
     {
@@ -208,7 +207,6 @@
             "instructor": 5,
             "difficulty": "BE",
             "created_at": "2024-12-06T12:00:00Z",
-            "rating": 4.6,
             "duration_weeks": 6,
             "thumbnail": "course_thumbnails/cloud_infrastructure_intro.webp"
         }
@@ -310,9 +308,8 @@
             "difficulty": "IN",
             "category": 5,
             "instructor": 5,
-            "rating": 4.6,
             "duration_weeks": 10,
-            "thumbnail": "course_thumbnails/cloud_native_applications.jpg",
+            "thumbnail": "course_thumbnails/cloud_native_applications.webp",
             "created_at": "2024-12-06T12:00:00Z"
         }
     },
@@ -323,7 +320,7 @@
             "title": "Introduction to Cloud-Native Concepts",
             "brief": "Understand the foundations of cloud-native development.",
             "description": "In this lesson, you’ll learn about the core principles of cloud-native applications, such as microservices, containerization, and infrastructure as code. We’ll explore why these technologies are critical for modern application development and how they enable agility, scalability, and resilience.",
-            "youtube_link": "https://www.youtube.com/embed/TUXui5ItBiE",
+            "youtube_link": "https://www.youtube.com/embed/3c-iBn73dDE",
             "course": 3
         }
     },
@@ -345,7 +342,7 @@
             "title": "Kubernetes Fundamentals",
             "brief": "Master the basics of Kubernetes orchestration.",
             "description": "Discover Kubernetes, the leading container orchestration platform. This lesson covers the architecture, components, and operations of Kubernetes, including deploying and managing containerized applications in a cluster.",
-            "youtube_link": "https://www.youtube.com/embed/cpbfZe4te6g",
+            "youtube_link": "https://www.youtube.com/embed/3c-iBn73dDE",
             "course": 3
         }
     },
@@ -356,7 +353,7 @@
             "title": "Microservices Architecture",
             "brief": "Understand microservices design principles.",
             "description": "Explore the design and implementation of microservices architectures. Learn how to decompose monolithic applications into independent, modular services and the challenges associated with managing distributed systems.",
-            "youtube_link": "https://www.youtube.com/embed/wTcVnDSYteU",
+            "youtube_link": "https://www.youtube.com/embed/3c-iBn73dDE",
             "course": 3
         }
     },
@@ -367,7 +364,7 @@
             "title": "Building CI/CD Pipelines",
             "brief": "Automate application deployment with CI/CD.",
             "description": "This lesson delves into continuous integration and continuous deployment (CI/CD) pipelines. Learn how to automate build, test, and deployment workflows for cloud-native applications using industry-standard tools.",
-            "youtube_link": "https://www.youtube.com/embed/4ISyXfAsNTI",
+            "youtube_link": "https://www.youtube.com/embed/3c-iBn73dDE",
             "course": 3
         }
     },
@@ -378,7 +375,7 @@
             "title": "Service Mesh with Istio",
             "brief": "Secure and manage microservices with Istio.",
             "description": "Dive into service mesh technology and understand how Istio simplifies service discovery, load balancing, and observability for microservices. This lesson also covers securing inter-service communication and traffic policies.",
-            "youtube_link": "https://www.youtube.com/embed/6t-1Iho4MUA",
+            "youtube_link": "https://www.youtube.com/embed/3c-iBn73dDE",
             "course": 3
         }
     },
@@ -389,7 +386,7 @@
             "title": "Scaling Applications on Kubernetes",
             "brief": "Learn advanced scaling techniques on Kubernetes.",
             "description": "Explore Kubernetes scaling features such as horizontal pod autoscaling and cluster autoscaling. This lesson also covers monitoring resource usage and optimizing application performance in a Kubernetes environment.",
-            "youtube_link": "https://www.youtube.com/embed/9zbtAXE9em4",
+            "youtube_link": "https://www.youtube.com/embed/3c-iBn73dDE",
             "course": 3
         }
     },
@@ -400,7 +397,7 @@
             "title": "Serverless Computing",
             "brief": "Dive into serverless architecture and its benefits.",
             "description": "Understand serverless computing and how it fits into the cloud-native paradigm. This lesson covers key concepts, popular frameworks, and use cases for serverless architectures in modern application development.",
-            "youtube_link": "https://www.youtube.com/embed/8EaouZlVfhM",
+            "youtube_link": "https://www.youtube.com/embed/3c-iBn73dDE",
             "course": 3
         }
     },
@@ -411,7 +408,6 @@
             "title": "Advanced React Patterns and Techniques",
             "description": "Master the art of React development with advanced patterns and techniques that help you build scalable, maintainable, and performant applications. This course dives deep into the world of state management, component composition, and hooks, ensuring you gain the skills needed to tackle complex front-end challenges. By the end of this course, you will have built a series of projects applying these advanced concepts, preparing you to excel in modern web development.",
             "created_at": "2024-12-19T12:00:00Z",
-            "rating": 4.8,
             "duration_weeks": 8,
             "thumbnail": "course_thumbnails/advanced_react_patterns.webp",
             "category": 2,
@@ -437,7 +433,7 @@
             "title": "State Management with Context API",
             "brief": "Learn state management using Context API.",
             "description": "This lesson explores the Context API as an effective way to manage global state in React applications. You'll understand the trade-offs of using Context versus other solutions like Redux. Hands-on examples include implementing a theme toggler and sharing data between deeply nested components.",
-            "youtube_link": "https://www.youtube.com/embed/35lXWvCuM8o",
+            "youtube_link": "https://www.youtube.com/embed/Ke90Tje7VS0",
             "course": 4
         }
     },
@@ -459,7 +455,7 @@
             "title": "Building Custom Hooks",
             "brief": "Create reusable custom hooks.",
             "description": "Custom hooks are a powerful feature in React that help abstract logic and make components cleaner. This lesson teaches you how to create and utilize custom hooks for data fetching, form validation, and more. You'll work on practical examples to solidify your understanding.",
-            "youtube_link": "https://www.youtube.com/embed/3qBXWUpoPHo",
+            "youtube_link": "https://www.youtube.com/embed/Ke90Tje7VS0",
             "course": 4
         }
     },
@@ -470,7 +466,7 @@
             "title": "Higher-Order Components",
             "brief": "Explore the concept of HOCs in React.",
             "description": "Higher-Order Components (HOCs) are an advanced technique in React for reusing component logic. This lesson walks you through creating and using HOCs effectively. Examples include authentication and data fetching patterns, ensuring you can apply HOCs in various scenarios.",
-            "youtube_link": "https://www.youtube.com/embed/mTYm-50NNFY",
+            "youtube_link": "https://www.youtube.com/embed/Ke90Tje7VS0",
             "course": 4
         }
     },
@@ -481,7 +477,7 @@
             "title": "Render Props Pattern",
             "brief": "Learn the render props pattern in React.",
             "description": "The render props pattern provides a unique way to share logic between components. In this lesson, you'll discover how to implement and use render props effectively. Practical examples include building a reusable data-fetching component and handling animations.",
-            "youtube_link": "https://www.youtube.com/embed/BcAYzv4wlQ8",
+            "youtube_link": "https://www.youtube.com/embed/Ke90Tje7VS0",
             "course": 4
         }
     },
@@ -503,9 +499,723 @@
             "title": "Deploying React Applications",
             "brief": "Learn to deploy React apps effectively.",
             "description": "Deploying React applications is the final step in the development process. This lesson guides you through the deployment of React projects to platforms like Vercel, Netlify, and AWS. You'll configure build scripts, environment variables, and learn best practices for a seamless deployment process.",
-            "youtube_link": "https://www.youtube.com/embed/-pHXkXNNj7g",
+            "youtube_link": "https://www.youtube.com/embed/Ke90Tje7VS0",
             "course": 4
         }
-    }    
+    },
+    {
+        "model": "courses.course",
+        "pk": 5,
+        "fields": {
+            "title": "Introduction to Machine Learning",
+            "description": "Machine learning is a pivotal area in artificial intelligence, enabling systems to learn and make decisions from data. This course introduces the fundamental concepts of machine learning, including supervised and unsupervised learning techniques, model evaluation, and applications across various domains. Designed for beginners, it provides a hands-on approach with Python implementations to build and evaluate machine learning models. Students will also learn about ethical considerations and the limitations of machine learning technologies, ensuring a comprehensive understanding of the field.",
+            "category": 6,
+            "difficulty": "BE",
+            "instructor": 3,
+            "created_at": "2024-12-19T12:00:00Z",
+            "duration_weeks": 8,
+            "thumbnail": "course_thumbnails/introduction_to_machine_learning.webp"
+        }
+    },
+    {
+        "model": "courses.courselesson",
+        "pk": 37,
+        "fields": {
+            "title": "What is Machine Learning?",
+            "brief": "An introduction to the concept of machine learning.",
+            "description": "This lesson provides an overview of machine learning, its history, and its significance in the modern world. Students will learn about key concepts such as algorithms, data-driven decision-making, and the difference between artificial intelligence and machine learning.",
+            "youtube_link": "https://www.youtube.com/embed/IHZwWFHWa-w",
+            "course": 5
+        }
+    },
+    {
+        "model": "courses.courselesson",
+        "pk": 38,
+        "fields": {
+            "title": "Supervised Learning Basics",
+            "brief": "Understanding supervised learning techniques.",
+            "description": "In this lesson, students will explore supervised learning, one of the core types of machine learning. Topics covered include regression, classification, and the use of labeled datasets to train predictive models.",
+            "youtube_link": "https://www.youtube.com/embed/IHZwWFHWa-w",
+            "course": 5
+        }
+    },
+    {
+        "model": "courses.courselesson",
+        "pk": 39,
+        "fields": {
+            "title": "Unsupervised Learning Fundamentals",
+            "brief": "Introduction to unsupervised learning and clustering.",
+            "description": "Students will be introduced to unsupervised learning techniques, including clustering and dimensionality reduction. The lesson focuses on applications where labeled data is unavailable.",
+            "youtube_link": "https://www.youtube.com/embed/RcxBfdyF7YY",
+            "course": 5
+        }
+    },
+    {
+        "model": "courses.courselesson",
+        "pk": 40,
+        "fields": {
+            "title": "Model Evaluation and Metrics",
+            "brief": "Evaluating machine learning models effectively.",
+            "description": "This lesson covers techniques for evaluating the performance of machine learning models, including confusion matrices, precision, recall, and F1 scores. Students will also learn about the importance of cross-validation.",
+            "youtube_link": "https://www.youtube.com/embed/IHZwWFHWa-w",
+            "course": 5
+        }
+    },
+    {
+        "model": "courses.courselesson",
+        "pk": 41,
+        "fields": {
+            "title": "Introduction to Neural Networks",
+            "brief": "Basics of neural networks and their applications.",
+            "description": "This lesson introduces the foundational concepts of neural networks, including perceptrons, activation functions, and the role of hidden layers in deep learning.",
+            "youtube_link": "https://www.youtube.com/embed/tPYj3fFJGjk",
+            "course": 5
+        }
+    },
+    {
+        "model": "courses.courselesson",
+        "pk": 42,
+        "fields": {
+            "title": "Real-World Applications of Machine Learning",
+            "brief": "Exploring practical applications of machine learning.",
+            "description": "In this lesson, students will discover various real-world applications of machine learning, from recommendation systems and image recognition to fraud detection and healthcare innovations.",
+            "youtube_link": "https://www.youtube.com/embed/IHZwWFHWa-w",
+            "course": 5
+        }
+    },
+    {
+        "model": "courses.courselesson",
+        "pk": 43,
+        "fields": {
+            "title": "Ethics in Machine Learning",
+            "brief": "Understanding the ethical considerations in AI.",
+            "description": "This lesson addresses the ethical challenges and considerations associated with machine learning, including bias in algorithms, data privacy concerns, and the societal impact of AI technologies.",
+            "youtube_link": "https://www.youtube.com/embed/IHZwWFHWa-w",
+            "course": 5
+        }
+    },
+    {
+        "model": "courses.courselesson",
+        "pk": 44,
+        "fields": {
+            "title": "Building Your First ML Model",
+            "brief": "A hands-on guide to building ML models in Python.",
+            "description": "In this final lesson, students will apply the knowledge gained throughout the course to build their first machine learning model. This practical, project-based approach reinforces key concepts and provides students with the skills needed to continue their journey in machine learning.",
+            "youtube_link": "https://www.youtube.com/embed/GwIo3gDZCVQ",
+            "course": 5
+        }
+    },
+    {
+        "model": "courses.course",
+        "pk": 6,
+        "fields": {
+            "title": "Introduction to Data Visualization",
+            "description": "Data visualization is an essential skill for any data scientist or analyst. In this course, students will learn how to effectively communicate data insights through visuals. From understanding basic chart types to mastering advanced interactive visualizations, this course provides a comprehensive guide to making data come alive. By the end of the course, students will be equipped to create compelling visualizations that resonate with their audience.",
+            "category": 3,
+            "difficulty": "IN",
+            "instructor": 6,
+            "created_at": "2024-12-19T12:00:00Z",
+            "duration_weeks": 6,
+            "thumbnail": "course_thumbnails/introduction_to_data_visualization.webp"
+        }
+    },
+    {
+        "model": "courses.courselesson",
+        "pk": 45,
+        "fields": {
+            "title": "Understanding Data Visualization Basics",
+            "brief": "Learn the fundamental concepts of data visualization.",
+            "description": "Data visualization is a way to communicate data insights effectively. This lesson covers the importance of visualization, the principles of good design, and how to choose the right chart types for your data. Students will also be introduced to key visualization tools and techniques that are widely used in the industry.",
+            "youtube_link": "https://www.youtube.com/embed/2w5U8-TrbFc",
+            "course": 6
+        }
+    },
+    {
+        "model": "courses.courselesson",
+        "pk": 46,
+        "fields": {
+            "title": "Data Cleaning for Visualizations",
+            "brief": "Prepare your data for accurate visualizations.",
+            "description": "Accurate visualizations require clean and structured data. This lesson explores best practices for data preparation, including handling missing values, removing outliers, and ensuring data consistency. Students will learn how to preprocess data to make it suitable for various visualization techniques.",
+            "youtube_link": "https://www.youtube.com/embed/QJnjZZUCL5w",
+            "course": 6
+        }
+    },
+    {
+        "model": "courses.courselesson",
+        "pk": 47,
+        "fields": {
+            "title": "Choosing the Right Chart Type",
+            "brief": "Match your data to the appropriate chart.",
+            "description": "Different data types and insights require different visualization methods. This lesson dives into various chart types, including bar charts, line charts, scatter plots, and more. Students will learn when and how to use each chart type to best convey their message.",
+            "youtube_link": "https://www.youtube.com/embed/Vlv9BLaZzD8",
+            "course": 6
+        }
+    },
+    {
+        "model": "courses.courselesson",
+        "pk": 48,
+        "fields": {
+            "title": "Introduction to Visualization Tools",
+            "brief": "Explore popular tools like Tableau and Power BI.",
+            "description": "This lesson introduces students to powerful data visualization tools, including Tableau, Power BI, and Python libraries like Matplotlib and Seaborn. By the end of this lesson, students will have a basic understanding of the capabilities and applications of these tools.",
+            "youtube_link": "https://www.youtube.com/embed/TcZ6H9h2rRg",
+            "course": 6
+        }
+    },
+    {
+        "model": "courses.courselesson",
+        "pk": 49,
+        "fields": {
+            "title": "Creating Interactive Dashboards",
+            "brief": "Build engaging and dynamic dashboards.",
+            "description": "Dashboards provide a way to visualize and interact with data dynamically. In this lesson, students will learn how to create interactive dashboards using tools like Tableau and Power BI. Topics include filtering, linking charts, and adding interactivity to enhance user experience.",
+            "youtube_link": "https://www.youtube.com/embed/ZBBwyi9M6eg",
+            "course": 6
+        }
+    },
+    {
+        "model": "courses.courselesson",
+        "pk": 50,
+        "fields": {
+            "title": "Color Theory in Visualizations",
+            "brief": "Understand the role of color in design.",
+            "description": "Colors play a crucial role in data visualization by drawing attention and conveying meaning. This lesson covers the basics of color theory, including color schemes, contrasts, and accessibility considerations. Students will learn how to use color effectively to make their visualizations more impactful.",
+            "youtube_link": "https://www.youtube.com/embed/0P1WIHT0xJ8",
+            "course": 6
+        }
+    },
+    {
+        "model": "courses.courselesson",
+        "pk": 51,
+        "fields": {
+            "title": "Best Practices for Storytelling with Data",
+            "brief": "Combine data insights into a compelling narrative.",
+            "description": "Effective data storytelling combines analytical insights with visual storytelling. In this lesson, students will learn how to create a narrative flow, highlight key insights, and tailor their visualizations to specific audiences. The goal is to make data-driven insights engaging and memorable.",
+            "youtube_link": "https://www.youtube.com/embed/hJ6PMtALjng",
+            "course": 6
+        }
+    },
+    {
+        "model": "courses.courselesson",
+        "pk": 52,
+        "fields": {
+            "title": "Final Project: Designing Your Own Dashboard",
+            "brief": "Apply your skills to create a dashboard.",
+            "description": "The final project challenges students to create a fully functional and visually appealing dashboard based on a dataset of their choice. This lesson provides guidelines for the project and showcases examples of successful dashboards. Students will apply everything they have learned throughout the course to complete this capstone project.",
+            "youtube_link": "https://www.youtube.com/embed/1UMvMvCkL64",
+            "course": 6
+        }
+    },
+    {
+        "model": "courses.course",
+        "pk": 7,
+        "fields": {
+            "category": 4,
+            "difficulty": "BE",
+            "instructor": 2,
+            "title": "Fundamentals of Mobile App Development",
+            "description": "This course introduces students to the exciting field of mobile app development. Learn to design and build mobile applications for Android and iOS platforms, understand user experience principles, and gain hands-on experience with tools like Flutter and React Native. By the end of this course, you will be able to create a fully functional mobile app.",
+            "created_at": "2024-12-20T12:00:00Z",
+            "duration_weeks": 6,
+            "thumbnail": "course_thumbnails/fundamentals_of_mobile_app_development.jpg"
+        }
+    },
+    {
+        "model": "courses.courselesson",
+        "pk": 53,
+        "fields": {
+            "course": 7,
+            "title": "Introduction to Mobile App Development",
+            "brief": "Overview of mobile app development concepts.",
+            "description": "This lesson introduces the fundamentals of mobile app development, covering the history, evolution, and current trends in the industry. You will learn about the various platforms, tools, and technologies used for developing mobile applications.",
+            "youtube_link": "https://www.youtube.com/embed/aqz-KE-bpKQ"
+        }
+    },
+    {
+        "model": "courses.courselesson",
+        "pk": 54,
+        "fields": {
+            "course": 7,
+            "title": "Setting Up Your Development Environment",
+            "brief": "Prepare your system for app development.",
+            "description": "Learn how to set up a development environment for building mobile apps. This lesson covers the installation and configuration of essential tools like Android Studio, Xcode, Flutter SDK, and React Native CLI. Understand best practices for optimizing your workspace.",
+            "youtube_link": "https://www.youtube.com/embed/aqz-KE-bpKQ"
+        }
+    },
+    {
+        "model": "courses.courselesson",
+        "pk": 55,
+        "fields": {
+            "course": 7,
+            "title": "Understanding User Interface (UI) Design",
+            "brief": "Basics of UI design for mobile apps.",
+            "description": "Explore the principles of user interface design for mobile applications. This lesson will guide you through creating intuitive and visually appealing layouts, understanding navigation patterns, and leveraging design tools like Figma and Adobe XD.",
+            "youtube_link": "https://www.youtube.com/embed/aqz-KE-bpKQ"
+        }
+    },
+    {
+        "model": "courses.courselesson",
+        "pk": 56,
+        "fields": {
+            "course": 7,
+            "title": "Introduction to Dart and Flutter",
+            "brief": "Learn Dart programming and Flutter basics.",
+            "description": "Dive into the Dart programming language and the Flutter framework. This lesson covers the basics of Dart syntax, setting up your first Flutter project, and building a simple user interface.",
+            "youtube_link": "https://www.youtube.com/embed/aqz-KE-bpKQ"
+        }
+    },
+    {
+        "model": "courses.courselesson",
+        "pk": 57,
+        "fields": {
+            "course": 7,
+            "title": "State Management in Flutter",
+            "brief": "Handle state effectively in Flutter apps.",
+            "description": "Understand state management in Flutter applications. This lesson explores different approaches to managing app state, including Provider, Riverpod, and Bloc patterns, and how to choose the right method for your project.",
+            "youtube_link": "https://www.youtube.com/embed/aqz-KE-bpKQ"
+        }
+    },
+    {
+        "model": "courses.courselesson",
+        "pk": 58,
+        "fields": {
+            "course": 7,
+            "title": "Building Responsive Mobile Apps",
+            "brief": "Create apps that adapt to various screen sizes.",
+            "description": "Learn techniques for building responsive mobile applications that adapt seamlessly to different screen sizes and orientations. This lesson covers using media queries, responsive design principles, and best practices for ensuring a consistent user experience.",
+            "youtube_link": "https://www.youtube.com/embed/aqz-KE-bpKQ"
+        }
+    },
+    {
+        "model": "courses.courselesson",
+        "pk": 59,
+        "fields": {
+            "course": 7,
+            "title": "Integrating APIs into Your Mobile App",
+            "brief": "Fetch and display data from APIs.",
+            "description": "Discover how to integrate APIs into your mobile applications to fetch and display data dynamically. This lesson covers the basics of RESTful APIs, handling JSON data, and working with HTTP requests in Flutter.",
+            "youtube_link": "https://www.youtube.com/embed/aqz-KE-bpKQ"
+        }
+    },
+    {
+        "model": "courses.courselesson",
+        "pk": 60,
+        "fields": {
+            "course": 7,
+            "title": "Publishing Your Mobile App",
+            "brief": "Prepare your app for release.",
+            "description": "Learn how to prepare and publish your mobile applications to app stores. This lesson covers creating app store listings, generating signed APKs, and meeting the requirements for Google Play Store and Apple App Store.",
+            "youtube_link": "https://www.youtube.com/embed/aqz-KE-bpKQ"
+        }
+    },
+    {
+        "model": "courses.course",
+        "pk": 8,
+        "fields": {
+            "title": "Advanced Machine Learning Techniques",
+            "description": "This course dives deep into advanced topics in machine learning, including ensemble methods, reinforcement learning, and unsupervised learning. Students will learn to implement state-of-the-art algorithms, optimize model performance, and apply these techniques to solve real-world problems. The course combines theoretical understanding with practical projects to prepare students for the next step in their machine learning journey.",
+            "category": 6,
+            "difficulty": "AD",
+            "instructor": 3,
+            "created_at": "2024-12-20T12:00:00Z",
+            "duration_weeks": 12,
+            "thumbnail": "course_thumbnails/advanced_machine_learning_techniques.webp"
+        }
+    },
+    {
+        "model": "courses.courselesson",
+        "pk": 61,
+        "fields": {
+            "course": 8,
+            "title": "Introduction to Ensemble Methods",
+            "brief": "Learn the basics of boosting and bagging.",
+            "description": "Ensemble methods are powerful techniques that combine multiple models to improve predictions. This lesson introduces you to popular methods like boosting and bagging, explains their theoretical foundation, and demonstrates their application in Python. By the end of this lesson, you will understand why ensemble methods are critical in achieving higher accuracy in machine learning tasks.",
+            "youtube_link": "https://www.youtube.com/embed/3CC4N4z3GJc"
+        }
+    },
+    {
+        "model": "courses.courselesson",
+        "pk": 62,
+        "fields": {
+            "course": 8,
+            "title": "Gradient Boosting Algorithms",
+            "brief": "Understand how Gradient Boosting works.",
+            "description": "Gradient Boosting is a key ensemble learning method used widely in competitions and production environments. In this lesson, we will explore how Gradient Boosting works, its strengths, and its limitations. You will also learn to implement Gradient Boosting algorithms using libraries like XGBoost and LightGBM.",
+            "youtube_link": "https://www.youtube.com/embed/3CC4N4z3GJc"
+        }
+    },
+    {
+        "model": "courses.courselesson",
+        "pk": 63,
+        "fields": {
+            "course": 8,
+            "title": "Introduction to Reinforcement Learning",
+            "brief": "Explore the fundamentals of reinforcement learning.",
+            "description": "Reinforcement Learning (RL) is an exciting area of machine learning that deals with decision-making and optimization. In this lesson, we will introduce you to the basic concepts of RL, including agents, environments, and reward signals. You will also learn about popular algorithms like Q-learning and policy gradients.",
+            "youtube_link": "https://www.youtube.com/embed/3CC4N4z3GJc"
+        }
+    },
+    {
+        "model": "courses.courselesson",
+        "pk": 64,
+        "fields": {
+            "course": 8,
+            "title": "Deep Q-Networks (DQN)",
+            "brief": "Learn about Deep Q-Networks and their implementation.",
+            "description": "Deep Q-Networks (DQN) combine deep learning and reinforcement learning to achieve impressive results in complex decision-making tasks. This lesson covers the theoretical underpinnings of DQNs and demonstrates how to implement them in Python using TensorFlow or PyTorch.",
+            "youtube_link": "https://www.youtube.com/embed/3CC4N4z3GJc"
+        }
+    },
+    {
+        "model": "courses.courselesson",
+        "pk": 65,
+        "fields": {
+            "course": 8,
+            "title": "Clustering Techniques",
+            "brief": "Explore unsupervised learning with clustering.",
+            "description": "Clustering is a popular unsupervised learning technique used to group similar data points together. In this lesson, we will discuss clustering algorithms like K-Means, DBSCAN, and hierarchical clustering, along with their applications and limitations.",
+            "youtube_link": "https://www.youtube.com/embed/3CC4N4z3GJc"
+        }
+    },
+    {
+        "model": "courses.courselesson",
+        "pk": 66,
+        "fields": {
+            "course": 8,
+            "title": "Dimensionality Reduction",
+            "brief": "Learn how to reduce the dimensionality of your data.",
+            "description": "Dimensionality reduction techniques like PCA and t-SNE are essential for dealing with high-dimensional data. This lesson covers the theory behind these techniques and shows how to apply them to real-world datasets to improve visualization and performance.",
+            "youtube_link": "https://www.youtube.com/embed/3CC4N4z3GJc"
+        }
+    },
+    {
+        "model": "courses.courselesson",
+        "pk": 67,
+        "fields": {
+            "course": 8,
+            "title": "Autoencoders",
+            "brief": "Introduction to autoencoders and their applications.",
+            "description": "Autoencoders are a type of neural network used for unsupervised learning. In this lesson, you will learn the architecture of autoencoders, their use cases in anomaly detection and data compression, and how to implement them in Python.",
+            "youtube_link": "https://www.youtube.com/embed/3CC4N4z3GJc"
+        }
+    },
+    {
+        "model": "courses.courselesson",
+        "pk": 68,
+        "fields": {
+            "course": 8,
+            "title": "Generative Adversarial Networks (GANs)",
+            "brief": "Discover the world of GANs.",
+            "description": "Generative Adversarial Networks (GANs) have revolutionized the field of artificial intelligence. This lesson introduces you to the concepts behind GANs, their architecture, and how they are used to generate realistic data like images and audio.",
+            "youtube_link": "https://www.youtube.com/embed/3CC4N4z3GJc"
+        }
+    },
+    {
+        "model": "courses.course",
+        "pk": 9,
+        "fields": {
+            "title": "Comprehensive Guide to Cloud Security",
+            "description": "This course offers a deep dive into cloud security, covering topics like securing data, managing access control, and implementing encryption techniques. By the end, participants will have the skills to safeguard their cloud environments against threats.",
+            "category": 5,
+            "instructor": 5,
+            "difficulty": "AD",
+            "created_at": "2024-12-20T12:00:00Z",
+            "duration_weeks": 6,
+            "thumbnail": "course_thumbnails/comprehensive_cloud_security.webp"
+        }
+    },
+    {
+        "model": "courses.courselesson",
+        "pk": 69,
+        "fields": {
+            "course": 9,
+            "title": "Introduction to Cloud Security",
+            "brief": "Learn the fundamentals of cloud security.",
+            "description": "This lesson introduces the basics of cloud security, discussing common threats, vulnerabilities, and the importance of safeguarding cloud environments.",
+            "youtube_link": "https://www.youtube.com/embed/validlink1"
+        }
+    },
+    {
+        "model": "courses.courselesson",
+        "pk": 70,
+        "fields": {
+            "course": 9,
+            "title": "Understanding Access Control",
+            "brief": "Learn about cloud access management.",
+            "description": "This lesson covers access control methods, including multi-factor authentication, role-based access, and monitoring tools.",
+            "youtube_link": "https://www.youtube.com/embed/validlink2"
+        }
+    },
+    {
+        "model": "courses.courselesson",
+        "pk": 71,
+        "fields": {
+            "course": 9,
+            "title": "Encryption Techniques",
+            "brief": "Explore encryption methods for cloud data.",
+            "description": "This lesson explains encryption algorithms, key management practices, and how to implement end-to-end encryption.",
+            "youtube_link": "https://www.youtube.com/embed/validlink3"
+        }
+    },
+    {
+        "model": "courses.courselesson",
+        "pk": 72,
+        "fields": {
+            "course": 9,
+            "title": "Securing Cloud Applications",
+            "brief": "Ensure secure deployment of apps.",
+            "description": "This lesson delves into application-level security, secure coding practices, and vulnerability assessments.",
+            "youtube_link": "https://www.youtube.com/embed/validlink4"
+        }
+    },
+    {
+        "model": "courses.courselesson",
+        "pk": 73,
+        "fields": {
+            "course": 9,
+            "title": "Monitoring and Incident Response",
+            "brief": "Implement effective monitoring tools.",
+            "description": "This lesson discusses monitoring strategies, intrusion detection systems, and establishing a robust incident response plan.",
+            "youtube_link": "https://www.youtube.com/embed/validlink5"
+        }
+    },
+    {
+        "model": "courses.courselesson",
+        "pk": 74,
+        "fields": {
+            "course": 9,
+            "title": "Cloud Security Compliance",
+            "brief": "Understand regulatory requirements.",
+            "description": "This lesson provides an overview of compliance standards like GDPR, HIPAA, and ISO 27001, emphasizing their importance in cloud security.",
+            "youtube_link": "https://www.youtube.com/embed/validlink6"
+        }
+    },
+    {
+        "model": "courses.courselesson",
+        "pk": 75,
+        "fields": {
+            "course": 9,
+            "title": "Emerging Trends in Cloud Security",
+            "brief": "Explore future challenges in cloud security.",
+            "description": "This lesson examines advancements in cloud security technologies, AI's role in threat detection, and challenges posed by evolving cyber threats.",
+            "youtube_link": "https://www.youtube.com/embed/validlink7"
+        }
+    },
+    {
+        "model": "courses.courselesson",
+        "pk": 76,
+        "fields": {
+            "course": 9,
+            "title": "Final Project: Securing a Cloud Environment",
+            "brief": "Apply knowledge in a practical scenario.",
+            "description": "This lesson guides students through a capstone project where they secure a simulated cloud environment, incorporating all techniques learned.",
+            "youtube_link": "https://www.youtube.com/embed/validlink8"
+        }
+    },
+    {
+        "model": "courses.course",
+        "pk": 10,
+        "fields": {
+            "title": "Mastering Progressive Web Apps",
+            "description": "Progressive Web Apps (PWAs) are reshaping how applications are developed and delivered. This course provides an in-depth exploration of PWAs, including their architecture, features, and implementation strategies. From service workers to advanced caching techniques, students will learn to create applications that deliver a seamless and responsive user experience. With hands-on projects and real-world examples, this course equips learners with the skills to master the art of PWA development, ensuring applications perform well across different platforms.",
+            "category": 4,
+            "difficulty": "AD",
+            "instructor": 6,
+            "created_at": "2024-12-20T12:00:00Z",
+            "duration_weeks": 5,
+            "thumbnail": "course_thumbnails/mastering_progressive_web_apps.webp"
+        }
+    },
+    {
+        "model": "courses.courselesson",
+        "pk": 78,
+        "fields": {
+            "title": "Introduction to Progressive Web Apps",
+            "brief": "Discover the fundamentals of PWAs.",
+            "description": "Progressive Web Apps (PWAs) combine the best features of web and mobile applications. This lesson introduces students to PWAs, covering their history, evolution, and core benefits. Students will gain a solid understanding of what makes PWAs unique and how they fit into the modern software development landscape.",
+            "youtube_link": "https://www.youtube.com/embed/1qaITm3cGVI",
+            "course": 10
+        }
+    },
+    {
+        "model": "courses.courselesson",
+        "pk": 79,
+        "fields": {
+            "title": "Understanding Service Workers",
+            "brief": "Learn how service workers power PWAs.",
+            "description": "Service workers are the backbone of Progressive Web Apps, enabling offline functionality, push notifications, and more. This lesson delves into the technical workings of service workers, including their lifecycle, registration, and caching strategies. Students will gain practical knowledge to implement and manage service workers effectively.",
+            "youtube_link": "https://www.youtube.com/embed/4xtXjTiKjM4",
+            "course": 10
+        }
+    },
+    {
+        "model": "courses.courselesson",
+        "pk": 80,
+        "fields": {
+            "title": "Implementing Offline Features",
+            "brief": "Create offline-ready PWAs.",
+            "description": "One of the most significant advantages of PWAs is their ability to function offline. This lesson explores various strategies to implement offline features, from simple caching techniques to advanced IndexedDB integration. Students will build practical skills to ensure their applications deliver value even in low or no connectivity scenarios.",
+            "youtube_link": "https://www.youtube.com/embed/9xeEGz5tHHI",
+            "course": 10
+        }
+    },
+    {
+        "model": "courses.courselesson",
+        "pk": 81,
+        "fields": {
+            "title": "Advanced Caching Techniques",
+            "brief": "Optimize your PWA performance.",
+            "description": "Efficient caching is critical for PWAs to provide fast and reliable user experiences. This lesson covers advanced caching techniques using Cache API and strategies to manage cached content. Students will learn how to balance performance, storage, and resource freshness in their applications.",
+            "youtube_link": "https://www.youtube.com/embed/3zVwqt22tzg",
+            "course": 10
+        }
+    },
+    {
+        "model": "courses.courselesson",
+        "pk": 82,
+        "fields": {
+            "title": "Building PWA Shell Architecture",
+            "brief": "Design the core structure of PWAs.",
+            "description": "The shell architecture is a cornerstone of PWAs, enabling fast loading times and a consistent user experience. This lesson teaches students how to build and maintain a robust shell architecture for their applications. Topics include designing reusable components, optimizing for performance, and managing updates effectively.",
+            "youtube_link": "https://www.youtube.com/embed/6xk1I6H3-Rc",
+            "course": 10
+        }
+    },
+    {
+        "model": "courses.courselesson",
+        "pk": 83,
+        "fields": {
+            "title": "Adding Push Notifications",
+            "brief": "Engage users with push notifications.",
+            "description": "Push notifications are a powerful feature of PWAs, enabling developers to engage users even when the application is not actively being used. This lesson covers the technical aspects of implementing push notifications, including permission handling, integrating with notification APIs, and crafting effective notification strategies.",
+            "youtube_link": "https://www.youtube.com/embed/7r2V1R7W8Qo",
+            "course": 10
+        }
+    },
+    {
+        "model": "courses.courselesson",
+        "pk": 84,
+        "fields": {
+            "title": "Testing and Debugging PWAs",
+            "brief": "Ensure reliability with testing tools.",
+            "description": "Testing and debugging are essential to deliver a high-quality Progressive Web App. This lesson introduces students to tools and techniques for testing PWAs, including performance audits with Lighthouse and debugging service workers. Practical exercises will help students identify and fix common issues in their applications.",
+            "youtube_link": "https://www.youtube.com/embed/8ZspZGfVMFg",
+            "course": 10
+        }
+    },
+    {
+        "model": "courses.courselesson",
+        "pk": 85,
+        "fields": {
+            "title": "Deploying PWAs to Production",
+            "brief": "Launch your PWA to the world.",
+            "description": "This lesson guides students through the process of deploying PWAs to production environments. Topics include configuring hosting services, ensuring HTTPS compliance, and registering the application with app stores. Students will gain the confidence to launch and maintain their Progressive Web Apps effectively.",
+            "youtube_link": "https://www.youtube.com/embed/5kQjRQJ4fGE",
+            "course": 10
+        }
+    },
+    {
+        "model": "courses.course",
+        "pk": 11,
+        "fields": {
+            "title": "Responsive Web Design Basics",
+            "description": "Learn the principles and techniques of responsive web design to create visually appealing and functional websites that adapt seamlessly to any device. This course covers the fundamentals of fluid grids, flexible images, and media queries. By the end, you'll be equipped with practical skills to design websites that provide an optimal user experience across various screen sizes and resolutions.",
+            "category": 2,
+            "instructor": 6,
+            "difficulty": "BE",
+            "created_at": "2024-12-06T12:00:00Z",
+            "duration_weeks": 4,
+            "thumbnail": "course_thumbnails/responsive_web_design_basics.jpg"
+        }
+    },
+    {
+        "model": "courses.courselesson",
+        "pk": 86,
+        "fields": {
+            "course": 11,
+            "title": "Introduction to Responsive Design",
+            "brief": "Understand the importance of responsive web design.",
+            "description": "In this lesson, you will learn the basics of responsive web design, including its significance in today's digital landscape. We will explore how responsive design enhances user experience by ensuring that websites adapt seamlessly to different devices and screen sizes.",
+            "youtube_link": "https://www.youtube.com/watch?v=srvUrASNj0s"
+        }
+    },
+    {
+        "model": "courses.courselesson",
+        "pk": 87,
+        "fields": {
+            "course": 11,
+            "title": "Fluid Grid Layouts",
+            "brief": "Learn about the concept of fluid grids.",
+            "description": "This lesson introduces fluid grid layouts, a cornerstone of responsive design. You'll learn how to create flexible and scalable layouts that adjust proportionally based on the screen size. Practical examples and exercises will be included.",
+            "youtube_link": "https://www.youtube.com/watch?v=8gNrZ4lAnAw"
+        }
+    },
+    {
+        "model": "courses.courselesson",
+        "pk": 88,
+        "fields": {
+            "course": 11,
+            "title": "Flexible Images and Media",
+            "brief": "Understand how to make images responsive.",
+            "description": "In this lesson, we will explore techniques for making images and other media elements responsive. You'll learn how to use CSS properties like max-width and height to ensure that media adapts seamlessly to different screen sizes.",
+            "youtube_link": "https://www.youtube.com/watch?v=5UXZ6f1vdm8"
+        }
+    },
+    {
+        "model": "courses.courselesson",
+        "pk": 89,
+        "fields": {
+            "course": 11,
+            "title": "Introduction to Media Queries",
+            "brief": "Learn the basics of media queries.",
+            "description": "This lesson covers the fundamentals of media queries in CSS. You'll learn how to apply different styles based on screen size, orientation, and resolution. Practical examples will help solidify your understanding.",
+            "youtube_link": "https://www.youtube.com/watch?v=3nLTB_E6XAM"
+        }
+    },
+    {
+        "model": "courses.courselesson",
+        "pk": 90,
+        "fields": {
+            "course": 11,
+            "title": "Breakpoints and Design Decisions",
+            "brief": "Understand the role of breakpoints in design.",
+            "description": "In this lesson, we will discuss the concept of breakpoints and their role in responsive web design. You'll learn how to choose breakpoints strategically to ensure optimal user experience across devices.",
+            "youtube_link": "https://www.youtube.com/watch?v=8gNrZ4lAnAw"
+        }
+    },
+    {
+        "model": "courses.courselesson",
+        "pk": 91,
+        "fields": {
+            "course": 11,
+            "title": "Advanced Media Queries",
+            "brief": "Explore advanced techniques with media queries.",
+            "description": "Building on the basics, this lesson dives into advanced media query techniques. You'll learn how to target specific device capabilities and combine multiple conditions for greater control over your design.",
+            "youtube_link": "https://www.youtube.com/watch?v=srvUrASNj0s"
+        }
+    },
+    {
+        "model": "courses.courselesson",
+        "pk": 92,
+        "fields": {
+            "course": 11,
+            "title": "Testing and Debugging Responsive Designs",
+            "brief": "Learn how to test and debug designs.",
+            "description": "This lesson focuses on testing and debugging responsive web designs. You'll learn how to use browser developer tools and online testing platforms to ensure your designs work flawlessly on various devices.",
+            "youtube_link": "https://www.youtube.com/watch?v=5UXZ6f1vdm8"
+        }
+    },
+    {
+        "model": "courses.courselesson",
+        "pk": 93,
+        "fields": {
+            "course": 11,
+            "title": "Project: Build a Responsive Website",
+            "brief": "Apply your skills to build a project.",
+            "description": "In this final lesson, you'll apply all the concepts you've learned to build a fully responsive website. Step-by-step guidance will be provided to help you create a project you can showcase in your portfolio.",
+            "youtube_link": "https://www.youtube.com/watch?v=3nLTB_E6XAM"
+        }
+    }     
 ]
     

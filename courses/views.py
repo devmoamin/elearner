@@ -72,52 +72,19 @@ class CourseDetailView(DetailView):
         context['is_enrolled'] = enrollment is not None
         context['is_approved'] = enrollment is not None and enrollment.approved
         return context
-    
 
-class CourseCertificateView(DetailView):
-    model = Course
-    template_name = 'certificate.html'
-    pk_url_kwarg = 'course'
-
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        course = context['course']
-        enrollment = course.get_enrollment(self.request.user)
-        if enrollment is None or not enrollment.approved:
-            raise Http404
-        
-        context['is_completed'] = enrollment.is_completed
-        context['progress_percentage'] = enrollment.progress
-        context['next_lesson'] = enrollment.next_lesson
-        return context
-    
-
-class GenerateCertificateView(View):
-    def get(self, request, *args, **kwargs):
-        course_id = kwargs.get('course')
-        
-        if not request.user.is_authenticated:
-            raise Http404
-
-        course = Course.objects.get(id=course_id)  # Fetch the course object
-        enrollment = course.get_enrollment(request.user)
-        if enrollment is None or not enrollment.approved or not enrollment.is_completed:
-            raise Http404
-        
-        response = HttpResponse(content_type='application/pdf')        
-        response['Content-Disposition'] = f'attachment; filename="certificate_{course.title}.pdf"'
-        generate_certificate(response, request.user, course, enrollment)
-        return response
-    
 
 class ClassroomView(DetailView):
     model = CourseLesson
     template_name = "classroom.html"
 
     def get_object(self, queryset = ...):
-        course_id = self.kwargs.get('course')
-        lesson_id = self.kwargs.get('lesson')
-        return Course.objects.get_lesson(self.request.user, course_id, lesson_id)
+        try:
+            course_id = self.kwargs.get('course')
+            lesson_id = self.kwargs.get('lesson')
+            return Course.objects.get_lesson(self.request.user, course_id, lesson_id)
+        except (Course.DoesNotExist, CourseLesson.DoesNotExist):
+            raise Http404("No lesson found matching the query")
         
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -148,11 +115,53 @@ class CompleteLessonView(View):
     def post(self, request, *args, **kwargs):
         course_id = kwargs.get('course')
         lesson_id = kwargs.get('lesson')
-        next_lesson_id = Course.objects.complete_lesson(request.user, course_id, lesson_id)
+        next_lesson_id = None
+
+        try:
+            next_lesson_id = Course.objects.complete_lesson(request.user, course_id, lesson_id)
+        except (Course.DoesNotExist, CourseLesson.DoesNotExist):
+            raise Http404("No lesson found matching the query")
+
         if next_lesson_id is None:
             return HttpResponseRedirect(reverse('completed_course', kwargs={'course': course_id}))
         return HttpResponseRedirect(reverse('classroom', kwargs={'course': course_id, 'lesson': next_lesson_id}))
     
     def get(self, request, *args, **kwargs):
         return self.post(request, *args, **kwargs)
+    
+
+class CourseCertificateView(DetailView):
+    model = Course
+    template_name = 'certificate.html'
+    pk_url_kwarg = 'course'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        course = context['course']
+        enrollment = course.get_enrollment(self.request.user)
+        if enrollment is None or not enrollment.approved:
+            raise Http404
+        
+        context['is_completed'] = enrollment.is_completed
+        context['progress_percentage'] = enrollment.progress
+        context['next_lesson'] = enrollment.next_lesson
+        return context
+    
+
+class GenerateCertificateView(View):
+    def get(self, request, *args, **kwargs):
+        course_id = kwargs.get('course')
+        
+        if not request.user.is_authenticated:
+            raise Http404
+
+        course = Course.objects.get(id=course_id)
+        enrollment = course.get_enrollment(request.user)
+        if not enrollment.can_download_certificate:
+            raise Http404
+        
+        response = HttpResponse(content_type='application/pdf')        
+        response['Content-Disposition'] = f'attachment; filename="certificate_{course.title}.pdf"'
+        generate_certificate(response, request.user, course, enrollment)
+        return response
     
