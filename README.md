@@ -20,7 +20,7 @@ git clone https://github.com/moamindev/elearner.git
 
 ```
 cd elearner
-pip install requirements.txt
+pip install -r requirements.txt
 ```
 
 ### 4. Migrate and load data
