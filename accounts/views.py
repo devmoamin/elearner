@@ -1,6 +1,7 @@
 from django.urls import reverse_lazy
 from django.views.generic import CreateView, UpdateView
 from django.contrib import messages
+from django.http import Http404
 from .forms import SignUpForm, ProfileForm
 
 
@@ -16,6 +17,8 @@ class ProfileView(UpdateView):
     success_url = reverse_lazy('profile')
 
     def get_object(self, queryset = ...):
+        if not self.request.user.is_authenticated:
+            raise Http404
         return self.request.user
     
     def post(self, request, *args, **kwargs):

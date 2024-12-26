@@ -10,33 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 
-from pathlib import Path
-import os
-from dotenv import load_dotenv
-
-# load .env file
-load_dotenv()
-
-# Build paths inside the project like this: BASE_DIR / 'subdir'.
-BASE_DIR = Path(__file__).resolve().parent.parent
-
-
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
-
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.getenv('APP_SECRET_KEY')
-
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
-
-ALLOWED_HOSTS = ['localhost']
-
-ADMINS = [
-    ("Your Name", "your-email@gmail.com")
-]
-
-MANAGERS = ADMINS
+from .prod import *
 
 # Application definition
 
@@ -112,20 +86,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-# add security settings
-
-SECURE_HSTS_SECONDS = 3600
-SECURE_HSTS_INCLUDE_SUBDOMAINS = True
-SECURE_HSTS_PRELOAD = True
-
-# if you're using reverse proxy such as nginx and this is set to True, django would not redirect http requests from nginx. 
-# so we let nginx handles the redirection to https
-# SECURE_SSL_REDIRECT = True # redirect to https if attempted to access via http
-
-CSRF_COOKIE_SECURE = True
-SESSION_COOKIE_HTTPONLY = True
-SESSION_COOKIE_SECURE = True
-
 # Internationalization
 # https://docs.djangoproject.com/en/5.1/topics/i18n/
 
@@ -142,14 +102,10 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
 STATIC_URL = 'static/'
+MEDIA_URL = '/uploads/' # The URL that serves the media files 
 STATICFILES_DIRS = [
     BASE_DIR / 'static',  # this is where your static files will be stored in development
 ]
-STATIC_ROOT = BASE_DIR / 'staticfiles'
-MEDIA_ROOT = BASE_DIR / 'uploads'
-
-# The URL that serves the media files 
-MEDIA_URL = '/uploads/'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
@@ -170,7 +126,6 @@ EMAIL_PORT = 587
 EMAIL_USE_TLS = True  # TLS (Transport Layer Security) should be used for security
 EMAIL_HOST_USER = 'elearnerproject3@gmail.com'
 DEFAULT_FROM_EMAIL = 'E-Learner <elearnerproject3@gmail.com>'
-EMAIL_HOST_PASSWORD = os.getenv('APP_EMAIL_PASSWORD')  # Gmail account App Password
 
 # (Optional) Set default from address for outgoing emails
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
