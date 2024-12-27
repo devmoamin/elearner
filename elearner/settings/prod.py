@@ -31,6 +31,8 @@ MANAGERS = ADMINS
 SECURE_HSTS_SECONDS = 3600
 SECURE_HSTS_INCLUDE_SUBDOMAINS = True
 SECURE_HSTS_PRELOAD = True
+SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
+SECURE_REFERRER_POLICY = "strict-origin-when-cross-origin"
 
 # if you're using reverse proxy such as nginx and this is set to True, django would not redirect http requests from nginx. 
 # so we let nginx handles the redirection to https

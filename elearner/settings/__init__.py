@@ -34,7 +34,11 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'csp.middleware.CSPMiddleware'
 ]
+
+# content-scurirty-policy alowed origins, does not allow scripts or styles from other origins
+CSP_STYLE_SRC = ["'self'", "cdn.tailwindcss.com"]
 
 ROOT_URLCONF = 'elearner.urls'
 

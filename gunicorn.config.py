@@ -9,3 +9,7 @@ timeout = 30  # Time in seconds for a request to complete
 accesslog = "/var/log/elearner/gunicorn/access.log"  # Log file for access logs
 errorlog = "/var/log/elearner/gunicorn/error.log"  # Log file for error logs
 loglevel = "info"  # Logging level: debug, info, warning, error, critical
+# Redirect stdout/stderr to log file
+capture_output = True
+# Daemonize the Gunicorn process (detach & enter background)
+daemon = True
