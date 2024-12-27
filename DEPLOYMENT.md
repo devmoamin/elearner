@@ -1,4 +1,4 @@
-# Guid to deploy your Django app
+# Guide to deploy your Django app
 
 Before you start make sure [git](https://git-scm.com/downloads) is installed
 

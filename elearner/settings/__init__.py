@@ -10,7 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 
-from .prod import *
+from .dev import *
 
 # Application definition
 
@@ -34,11 +34,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'csp.middleware.CSPMiddleware'
 ]
-
-# content-scurirty-policy alowed origins, does not allow scripts or styles from other origins
-CSP_STYLE_SRC = ["'self'", "cdn.tailwindcss.com"]
 
 ROOT_URLCONF = 'elearner.urls'
 
