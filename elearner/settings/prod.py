@@ -43,5 +43,5 @@ CSRF_TRUSTED_ORIGINS = ['https://elearner.moamin.dev']
 SESSION_COOKIE_HTTPONLY = True
 SESSION_COOKIE_SECURE = True
 
-STATIC_ROOT = BASE_DIR / 'staticfiles'
-MEDIA_ROOT = BASE_DIR / 'uploads'
+STATIC_ROOT = '/var/www/elearner/static'
+MEDIA_ROOT = '/var/www/elearner/uploads'
