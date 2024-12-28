@@ -4,7 +4,7 @@
 
 {% block content %}
     <!-- Main Content -->
-    <div class="max-w-7xl mx-auto mt-14 bg-white rounded-xl shadow-xl overflow-hidden">
+    <div class="max-w-7xl mx-auto mt-4 bg-white rounded-xl shadow-xl overflow-hidden">
         <!-- Course Banner -->
         <div class="relative">
             <img src="/uploads/{{ course.thumbnail }}" alt="Course Banner" class="w-full h-64 object-cover">
@@ -30,11 +30,11 @@
         <div class="bg-gray-50 py-10">
             <div class="max-w-7xl mx-auto px-4">
                 <h3 class="text-2xl font-semibold text-gray-800">Meet Your Instructor</h3>
-                <div class="flex items-center mt-6 space-x-6">
-                    <div class='w-1/4 px-10'>
+                <div class="sm:flex items-center mt-6 space-x-6">
+                    <div class='mb-4 flex justify-center sm:w-1/4 px-10'>
                         <img src="/uploads/{{ course.instructor.photo }}" alt="Instructor" class="w-48 h-48 object-cover object-top rounded-full">
                     </div>
-                    <div class='w-3/4'>
+                    <div class='sm:w-3/4'>
                         <h4 class="text-xl font-semibold text-gray-800">{{ course.instructor.name }}</h4>
                         <p class="text-gray-600">
                             {{ course.instructor.bio }}    
@@ -45,7 +45,7 @@
         </div>
 
         <!-- Lessons Section -->
-        <div class="p-10 border-t border-gray-200">
+        <div class="mb-4 p-4 sm:p-10 border-t border-gray-200">
             <h3 class="text-2xl font-semibold text-gray-800 mb-8">Course Lessons</h3>
             
             <!-- Lessons Grid -->
@@ -65,7 +65,7 @@
         <!-- Enroll Section -->
         <div class="bg-gradient-to-l to-indigo-300 from-indigo-600 text-white py-10 flex flex-col justify-center items-center">
             <h3 class="text-3xl font-semibold">Ready to Get Started?</h3>
-            <p class="mt-4 text-lg">Enroll today and start building amazing web applications!</p>
+            <p class="px-4 mt-4 text-lg">Enroll today and start building amazing web applications!</p>
 
             {% if is_approved %}
                 <a href='{% url 'classroom' course=course.id lesson=course.lessons.first.id %}' class="mt-6 px-8 py-4 bg-white text-indigo-600 rounded-full font-semibold hover:bg-indigo-100 transition duration-300 text-lg">

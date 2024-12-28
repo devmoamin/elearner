@@ -22,6 +22,9 @@ class HomeView(TemplateView):
             return context
 
         pending, current, completed, suggested = Course.objects.get_user_courses(self.request.user)
+        announcements = list(filter(lambda i: i.progress == 0, current))
+
+        context['announcements'] = announcements
         context['pending_courses'] = pending
         context['current_courses'] = current
         context['completed_courses'] = completed

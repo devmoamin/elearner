@@ -16,6 +16,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from django.conf.urls import handler404, handler500, handler403, handler400
 from django.conf.urls.static import static
 from courses.views import HomeView, TemplateView
 from django.conf import settings
@@ -30,6 +31,11 @@ urlpatterns = [
     path('faq', TemplateView.as_view(template_name='faq.html'), name='faq'),
     path('about', TemplateView.as_view(template_name='about.html'), name='about'),
 ]
+
+handler400 = TemplateView.as_view(template_name="errors/400.html")
+handler403 = TemplateView.as_view(template_name="errors/403.html")
+handler404 = TemplateView.as_view(template_name="errors/404.html")
+handler500 = TemplateView.as_view(template_name="errors/500.html")
 
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

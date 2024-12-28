@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block title %}Server Error{% endblock title %}
+
+{% block content %}
+<div class="flex items-center justify-center h-[calc(100vh-130px)] bg-gray-100">
+    <div class="max-w-md text-center">
+        <!-- Icon -->
+        <div class="text-red-600 mb-6">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-24 w-24 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01M12 5a7 7 0 110 14 7 7 0 010-14zm0 0h.01" />
+            </svg>
+        </div>
+        <!-- Message -->
+        <h1 class="text-4xl font-bold text-gray-800 mb-4">500 - Internal Server Error</h1>
+        <p class="text-lg text-gray-600 mb-6">Something went wrong on our end. Please try again later or contact support.</p>
+        <!-- CTA -->
+        <a href="{% url 'home' %}" class="px-6 py-3 bg-red-600 text-white rounded-lg shadow hover:bg-red-500 transition">
+            Go Back Home
+        </a>
+    </div>
+</div>
+{% endblock %}

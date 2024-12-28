@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block title %}Not Found{% endblock %}
+
+{% block content %}
+<div class="flex items-center justify-center h-[calc(100vh-130px)] bg-gray-100">
+    <div class="max-w-md text-center">
+        <!-- Icon -->
+        <div class="text-indigo-600 mb-6">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-24 w-24 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7 4H5a2 2 0 01-2-2V7a2 2 0 012-2h14a2 2 0 012 2v10a2 2 0 01-2 2z" />
+            </svg>
+        </div>
+        <!-- Message -->
+        <h1 class="text-4xl font-bold text-gray-800 mb-4">404 - Page Not Found</h1>
+        <p class="text-lg text-gray-600 mb-6">We couldn't find the page you were looking for. Try navigating back to the homepage.</p>
+        <!-- CTA -->
+        <a href="{% url 'home' %}" class="px-6 py-3 bg-indigo-600 text-white rounded-lg shadow hover:bg-indigo-500 transition">
+            Go Back Home
+        </a>
+    </div>
+</div>
+{% endblock %}

@@ -126,7 +126,21 @@
                     <!-- Notifications -->
                     <div class="bg-white rounded-lg px-6">
                         <h3 class="text-lg font-bold text-gray-800 mb-4">Announcements</h3>
-                        <p class="text-sm text-gray-600 text-center">You have no new announcements.</p>
+                        {% if announcements|length == 0 %}
+                            <p class="text-sm text-gray-600 text-center">You have no new announcements.</p>
+                        {% else %}
+                            <div class="space-y-4">
+                                {% for a in announcements %}
+                                    <div class="bg-white rounded-lg shadow p-4 flex items-center">
+                                        <div>
+                                            <h4 class="text-sm font-semibold text-gray-800">Course Enrollment Approved</h4>
+                                            <p class="text-xs text-gray-600">{{ a.course.title }}</p>
+                                            <a href="{% url 'classroom' course=a.course.id lesson=a.next_lesson %}" class="text-indigo-600 text-xs hover:underline">Start learning...</a>
+                                        </div>
+                                    </div>
+                                {% endfor %}
+                            </div>
+                        {% endif %}
                     </div>
 
                     {% if suggested_courses.exists %}
