@@ -158,6 +158,7 @@ create a file with the name `.gitigore` this file contains paths that should be 
 ```
 /db.sqlite3
 /.env
+/staticroot
 ```
 
 ### 11. Commit and Push to your repo
@@ -258,14 +259,8 @@ then editor opens you should write the following in the file
 server_tokens off;
 
 # Use site-specific access and error logs
-access_log /var/log/nginx/supersecure.access.log;
-error_log /var/log/nginx/supersecure.error.log;
-
-# Return 444 status code & close connection if no Host header present
-server {
-    listen 80 default_server;
-    return 444;
-}
+access_log /var/log/nginx/elearner.access.log;
+error_log /var/log/nginx/elearner.error.log;
 
 # Redirect HTTP to HTTPS
 server {
@@ -278,6 +273,17 @@ server {
     server_name: elearner.moamin.dev;
     listen 443; # https port
 
+    # Serve static files directly
+    location /static/ {
+        autoindex on;
+        alias /var/www/elearner/static/;
+    }
+
+    location /uploads/ {
+        autoindex on;
+        alias /var/www/elearner/uploads/;
+    }
+
     # Pass on requests to Gunicorn listening at http://localhost:8000
     location / {
         proxy_pass http://localhost:8000;
@@ -286,12 +292,39 @@ server {
         proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
         proxy_redirect off;
     }
+}
+```
 
-    # Serve static files directly
-    location /static {
-        autoindex on;
-        alias /var/www/supersecure.codes/static/;
-    }
+add default server for nginx on both https and http ports. 
+first we generate self signed SSL certifcate (not for production, we just use it to listen to ssl port)
+
+```bash
+openssl req -x509 -nodes -days 365 -newkey rsa:2048 \
+    -keyout /etc/nginx/ssl/server.key \
+    -out /etc/nginx/ssl/server.crt \
+    -subj "/CN=<your-ip>"
+```
+
+then add the following settings in file `default`
+
+```bash
+server_tokens off;
+
+# Return 444 status code & close connection if no Host header present
+server {
+    listen * default_server;
+    listen [::] default_server;
+    server_name _;
+    return 444;
+}
+
+server {
+    listen 443 ssl default_server;
+    listen [::]:443 default_server;
+    server_name _;
+    ssl_certificate /etc/nginx/ssl/server.crt;
+    ssl_certificate_key /etc/nginx/ssl/server.key;
+    return 444;
 }
 ```
 
