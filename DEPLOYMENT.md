@@ -199,8 +199,8 @@ source bin/activate
 ```bash
 mkdir src
 cd src
-git clone https://github.com/your-username/your-repo.git
-cd repo-name
+git clone https://github.com/moamindev/elearner.git
+cd elearner
 ```
 
 ### 4. Install requirements
