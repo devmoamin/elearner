@@ -41,7 +41,8 @@ import secrets
 import string
 
 def generate_secret_key(length=50):
-    characters = string.ascii_letters + string.digits + string.punctuation
+    punctuation = r"""!#$%&()*+-.:<=>?@[\]^_{|}~"""
+    characters = string.ascii_letters + string.digits + punctuation
     return ''.join(secrets.choice(characters) for _ in range(length))
 
 generate_secret_key()
@@ -159,6 +160,7 @@ create a file with the name `.gitigore` this file contains paths that should be 
 /db.sqlite3
 /.env
 /staticroot
+/<app-name>/settings/dev.py
 ```
 
 ### 11. Commit and Push to your repo
