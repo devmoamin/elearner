@@ -274,6 +274,7 @@ server {
 server {
     server_name: elearner.moamin.dev;
     listen 443; # https port
+    client_max_body_size 11M;
 
     # Serve static files directly
     location /static/ {
